@@ -7,10 +7,18 @@
 
 import Foundation
 
-enum WeatherCondition: String {
-    case clear = "맑음"
-    case cloudy = "구름 많음"
-    case overcast = "흐림"
-    case rainy = "비"
-    case snow = "눈"
+struct WeatherCondition: Decodable {
+    let currentTemperatures: Double
+    let sensibleTemperatures: Double
+    let currentHumidity: Double
+    let minimumTemperatures: Double
+    let maximumTemperatures: Double
+    
+    private enum CodingKeys: String, CodingKey {
+        case currentTemperatures = "temp"
+        case sensibleTemperatures = "feels_like"
+        case currentHumidity = "humidity"
+        case minimumTemperatures = "temp_min"
+        case maximumTemperatures = "temp_max"
+    }
 }
