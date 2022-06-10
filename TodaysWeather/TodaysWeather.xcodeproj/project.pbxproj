@@ -107,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				48AFD3572853C87700AF543F /* Provider */,
+				48AFD3512853C87700AF543F /* Repository */,
 				48AFD3592853C87700AF543F /* Service */,
 				48AFD3632853C87700AF543F /* Error */,
 			);
@@ -203,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				48AFD3722853C87700AF543F /* Model */,
-				48AFD3512853C87700AF543F /* Repository */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
