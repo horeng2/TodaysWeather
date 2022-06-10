@@ -9,12 +9,8 @@ import Foundation
 
 class WeatherInfoService {
     let weatherInfoRepository = WeatherInfoRepository()
-    let geoInfoService = GeoInfoService()
-
-    func fetchWeatherInfo(city: City, completionHandler: @escaping (Result<WeatherInfo, NetworkError>) -> Void) {
-        guard let geoInfo = geoInfoService.totalGeoInfo[city] else {
-            return
-        }
+    
+    func fetchWeatherInfo(geoInfo: GeoInfo, completionHandler: @escaping (Result<WeatherInfo, NetworkError>) -> Void) {
         self.weatherInfoRepository.fetchWeatherInfo(by: geoInfo) { (result: Result<WeatherInfo, NetworkError>) in
             switch result {
             case .success(let weatherInfo):

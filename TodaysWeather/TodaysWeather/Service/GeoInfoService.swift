@@ -9,31 +9,26 @@ import Foundation
 
 class GeoInfoService {
     let geoRepository = GeoInfoRepository()
-    
-    var geoInfoUpdated: () -> Void = {}
     var totalGeoInfo = [City: GeoInfo]()
-    {
-        didSet {
-            if totalGeoInfo.count == City.allCases.count {
-                geoInfoUpdated()
-            }
-        }
-    }
     
     init() {
-        self.fetchOfAllCityGeoInfo()
-    }
-
-    func fetchOfAllCityGeoInfo() {
         City.allCases.forEach { city in
-            self.geoRepository.fetchGeoInfo(of: city) { (result: Result<GeoInfo, NetworkError>) in
-                switch result {
-                case .success(let geoInfo):
-                    self.totalGeoInfo.updateValue(geoInfo, forKey: city)
-                case .failure(_):
-                    return
-                }
+            self.fetchGeoInfo(city: city)
+        }
+    }
+    
+    func fetchGeoInfo(city: City) {
+        self.geoRepository.fetchGeoInfo(of: city) { (result: Result<GeoInfo, NetworkError>) in
+            switch result {
+            case .success(let geoInfo):
+                self.totalGeoInfo.updateValue(geoInfo, forKey: city)
+            case .failure(_):
+                return
             }
         }
+    }
+    
+    func geoInfoOfAllCities() -> [City: GeoInfo] {
+        return self.totalGeoInfo
     }
 }
