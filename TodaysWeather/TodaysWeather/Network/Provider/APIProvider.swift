@@ -15,7 +15,7 @@ class APIProvider {
     
     func request<T: APIRequest>(
         requestType: T,
-        completionHandler: @escaping (Result<T.ResponseType, NetworkError>) -> Void
+        completionHandler: @escaping (Result<Data, NetworkError>) -> Void
     ) {
         guard let request = requestType.urlRequest else {
             return
@@ -30,13 +30,7 @@ class APIProvider {
             guard let data = data else {
                 return completionHandler(.failure(.invaildData))
             }
-            
-            let decoder = JSONDecoder()
-            guard let decodedData = try? decoder.decode(T.ResponseType.self, from: data) else {
-                return completionHandler(.failure(.parsingError))
-            }
-            completionHandler(.success(decodedData))
-
+            completionHandler(.success(data))
         }
         task.resume()
     }

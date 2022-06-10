@@ -12,11 +12,11 @@ class WeatherInfoRepository {
     
     let apiProvider = APIProvider()
     
-    func fetchWeatherInfo(by cityGeoInfo: GeoInfo, completionHandler: @escaping (Result<WeatherInfo, NetworkError>) -> Void) {
-        apiProvider.request(requestType: WeatherInfoRequest(cityGeoInfo: cityGeoInfo)) { (result: Result<WeatherInfo, NetworkError>) in
+    func fetchWeatherInfo(by cityGeoInfo: GeoInfo, completionHandler: @escaping (Result<Data, NetworkError>) -> Void) {
+        apiProvider.request(requestType: WeatherInfoRequest(cityGeoInfo: cityGeoInfo)) { (result: Result<Data, NetworkError>) in
             switch result {
-            case .success(let decodedData):
-                completionHandler(.success(decodedData))
+            case .success(let data):
+                completionHandler(.success(data))
             case .failure(let error):
                 completionHandler(.failure(error))
             }
