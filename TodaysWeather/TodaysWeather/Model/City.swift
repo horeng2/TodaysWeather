@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum City: String, Decodable {
+enum City: String, CaseIterable, Decodable {
     case Gongju = "공주"
     case Gwangju = "광주"
     case Gumi = "구미"
@@ -28,49 +28,4 @@ enum City: String, Decodable {
     case Cheonan = "천안"
     case Cheongju = "청주"
     case Chuncheon = "춘천"
-    
-//    func geoInfo() -> GeoInfo {
-//        switch self {
-//        case .Gongju:
-//            <#code#>
-//        case .Gwangju:
-//            <#code#>
-//        case .Gumi:
-//            <#code#>
-//        case .Gunsan:
-//            <#code#>
-//        case .Daegu:
-//            <#code#>
-//        case .Daejeon:
-//            <#code#>
-//        case .Mokpo:
-//            <#code#>
-//        case .Busan:
-//            <#code#>
-//        case .Seosan:
-//            <#code#>
-//        case .Seoul:
-//            <#code#>
-//        case .Sokcho:
-//            <#code#>
-//        case .Suwon:
-//            <#code#>
-//        case .Sunsheon:
-//            <#code#>
-//        case .Ulsan:
-//            <#code#>
-//        case .Iksan:
-//            <#code#>
-//        case .Jeonju:
-//            <#code#>
-//        case .jeju:
-//            <#code#>
-//        case .Cheonan:
-//            <#code#>
-//        case .Cheongju:
-//            <#code#>
-//        case .Chuncheon:
-//            <#code#>
-//        }
-//    }
 }

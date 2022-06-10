@@ -13,7 +13,7 @@ struct WeatherInfoRequest: APIRequest {
     let city: City
  
     var url: URL? {
-        URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(city.geoInfo().latitude)&lon=\(city.geoInfo().longitude)&appid={API key}")
+        URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(city.geoInfo().latitude)&lon=\(city.geoInfo().longitude)&appid=\(Bundle.main.openWeatherAPIKey)")
     }
     
     var urlRequest: URLRequest? {

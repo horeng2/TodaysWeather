@@ -15,6 +15,8 @@
 		48AFD2E6285323D600AF543F /* GeoInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2E5285323D600AF543F /* GeoInfoRequest.swift */; };
 		48AFD2EB28537CE000AF543F /* SecretKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48AFD2EA28537CE000AF543F /* SecretKey.plist */; };
 		48AFD2ED28537E4000AF543F /* APIKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2EC28537E4000AF543F /* APIKeyBundle.swift */; };
+		48AFD2F02853812200AF543F /* GeoInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2EF2853812200AF543F /* GeoInfoRepository.swift */; };
+		48AFD2F3285383CA00AF543F /* GeoInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2F2285383CA00AF543F /* GeoInfoService.swift */; };
 		48D84D10285195CA00B8A984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D84D0F285195CA00B8A984 /* AppDelegate.swift */; };
 		48D84D12285195CA00B8A984 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D84D11285195CA00B8A984 /* SceneDelegate.swift */; };
 		48D84D14285195CA00B8A984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D84D13285195CA00B8A984 /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 		48AFD2E5285323D600AF543F /* GeoInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoInfoRequest.swift; sourceTree = "<group>"; };
 		48AFD2EA28537CE000AF543F /* SecretKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SecretKey.plist; sourceTree = "<group>"; };
 		48AFD2EC28537E4000AF543F /* APIKeyBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyBundle.swift; sourceTree = "<group>"; };
+		48AFD2EF2853812200AF543F /* GeoInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoInfoRepository.swift; sourceTree = "<group>"; };
+		48AFD2F2285383CA00AF543F /* GeoInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoInfoService.swift; sourceTree = "<group>"; };
 		48D84D0C285195CA00B8A984 /* TodaysWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodaysWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D84D0F285195CA00B8A984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48D84D11285195CA00B8A984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,22 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		48AFD2EE2853811500AF543F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				48AFD2EF2853812200AF543F /* GeoInfoRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		48AFD2F1285383B900AF543F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				48AFD2F2285383CA00AF543F /* GeoInfoService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		48D84D03285195CA00B8A984 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +124,8 @@
 		48D84D0E285195CA00B8A984 /* TodaysWeather */ = {
 			isa = PBXGroup;
 			children = (
+				48AFD2F1285383B900AF543F /* Service */,
+				48AFD2EE2853811500AF543F /* Repository */,
 				48AFD2DA285308ED00AF543F /* Network */,
 				48D84D292851E1B200B8A984 /* Model */,
 				48D84D0F285195CA00B8A984 /* AppDelegate.swift */,
@@ -209,10 +231,12 @@
 				48D84D14285195CA00B8A984 /* ViewController.swift in Sources */,
 				48AFD2E22853163200AF543F /* GeoInfo.swift in Sources */,
 				48D84D10285195CA00B8A984 /* AppDelegate.swift in Sources */,
+				48AFD2F02853812200AF543F /* GeoInfoRepository.swift in Sources */,
 				48D84D352851FAC100B8A984 /* SystemInfo.swift in Sources */,
 				48D84D2F2851F17200B8A984 /* City.swift in Sources */,
 				48D84D2B2851E1BC00B8A984 /* TodaysWeather.swift in Sources */,
 				48D84D12285195CA00B8A984 /* SceneDelegate.swift in Sources */,
+				48AFD2F3285383CA00AF543F /* GeoInfoService.swift in Sources */,
 				48D84D2D2851E35800B8A984 /* WeatherType.swift in Sources */,
 				48AFD2E6285323D600AF543F /* GeoInfoRequest.swift in Sources */,
 				48AFD2ED28537E4000AF543F /* APIKeyBundle.swift in Sources */,
