@@ -12,4 +12,5 @@ enum NetworkError: Error {
     case invaildData
     case responseError
     case parsingError
+    case invaildURL
 }
