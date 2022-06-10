@@ -8,7 +8,7 @@
 import Foundation
 
 struct WeatherBasicsInfo: Decodable {
-    let weatherCondition: WeatherType
+    let weatherCondition: String
     let description: String
     let icon: String
     

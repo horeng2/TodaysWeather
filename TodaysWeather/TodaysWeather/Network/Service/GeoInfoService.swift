@@ -21,7 +21,7 @@ class GeoInfoService {
         self.geoRepository.fetchGeoInfo(of: city) { (result: Result<Data, NetworkError>) in
             switch result {
             case .success(let data):
-                guard let geoInfo = try? JSONDecoder().decode(GeoInfo.self, from: data) else {
+                guard let geoInfo = try? JSONDecoder().decode([GeoInfo].self, from: data).first else {
                     return
                 }
                 self.totalGeoInfo.updateValue(geoInfo, forKey: city)

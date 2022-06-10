@@ -8,8 +8,8 @@
 import Foundation
 
 struct GeoInfo: Decodable {
-    let latitude: Int
-    let longitude: Int
+    var latitude: Double
+    var longitude: Double
     
     private enum CodingKeys: String, CodingKey {
         case latitude = "lat"
