@@ -14,34 +14,28 @@ class GeoInfoService {
     var totalGeoInfo = [City: GeoInfo]()
     {
         didSet {
-            geoInfoUpdated()
+            if totalGeoInfo.count == City.allCases.count {
+                geoInfoUpdated()
+            }
         }
     }
     
     init() {
-        City.allCases.forEach { city in
-            self.fetchGeoInfo(city: city) { geoInfo in
-                self.totalGeoInfo.updateValue(geoInfo, forKey: city)
-            }
-        }
+        self.fetchOfAllCityGeoInfo()
     }
-    
-    func fetchGeoInfo(city: City, onCompleted: @escaping (GeoInfo) -> Void) {
-        geoRepository.fetchGeoInfo(of: city) { entity in
-            guard let geoInfo = try? JSONDecoder().decode(GeoInfo.self, from: entity) else {
-                return
-            }
-            onCompleted(geoInfo)
-        }
-    }
-    
+
     func fetchOfAllCityGeoInfo() {
         var totalGeoInfo = [City: GeoInfo]()
         City.allCases.forEach { city in
-            self.fetchGeoInfo(city: city) { geoInfo in
-                totalGeoInfo.updateValue(geoInfo, forKey: city)
+            self.geoRepository.fetchGeoInfo(of: city) { (result: Result<GeoInfo, NetworkError>) in
+                switch result {
+                case .success(let geoInfo):
+                    totalGeoInfo.updateValue(geoInfo, forKey: city)
+                case .failure(_):
+                    return
+                }
             }
+            self.totalGeoInfo = totalGeoInfo
         }
-        self.totalGeoInfo = totalGeoInfo
     }
 }

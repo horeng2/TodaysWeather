@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48AFD2DC2853091300AF543F /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2DB2853091300AF543F /* URLSessionProvider.swift */; };
+		48AFD2DC2853091300AF543F /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2DB2853091300AF543F /* APIProvider.swift */; };
 		48AFD2DE2853091900AF543F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2DD2853091900AF543F /* NetworkError.swift */; };
 		48AFD2E0285311AB00AF543F /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2DF285311AB00AF543F /* APIRequest.swift */; };
 		48AFD2E22853163200AF543F /* GeoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2E12853163200AF543F /* GeoInfo.swift */; };
@@ -32,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		48AFD2DB2853091300AF543F /* URLSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
+		48AFD2DB2853091300AF543F /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		48AFD2DD2853091900AF543F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		48AFD2DF285311AB00AF543F /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		48AFD2E12853163200AF543F /* GeoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoInfo.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		48AFD2DA285308ED00AF543F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				48AFD2DB2853091300AF543F /* URLSessionProvider.swift */,
+				48AFD2DB2853091300AF543F /* APIProvider.swift */,
 				48AFD2DD2853091900AF543F /* NetworkError.swift */,
 				48AFD2E72853756F00AF543F /* Request */,
 			);
@@ -240,7 +240,7 @@
 				48D84D2D2851E35800B8A984 /* WeatherType.swift in Sources */,
 				48AFD2E6285323D600AF543F /* GeoInfoRequest.swift in Sources */,
 				48AFD2ED28537E4000AF543F /* APIKeyBundle.swift in Sources */,
-				48AFD2DC2853091300AF543F /* URLSessionProvider.swift in Sources */,
+				48AFD2DC2853091300AF543F /* APIProvider.swift in Sources */,
 				48AFD2E4285323CC00AF543F /* WeatherInfoRequest.swift in Sources */,
 				48AFD2DE2853091900AF543F /* NetworkError.swift in Sources */,
 				48AFD2E0285311AB00AF543F /* APIRequest.swift in Sources */,

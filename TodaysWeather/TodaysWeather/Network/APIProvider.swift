@@ -7,7 +7,7 @@
 
 import Foundation
 
-class URLSessionProvider {
+class APIProvider {
     let session: URLSession
     init(session: URLSession = URLSession.shared) {
         self.session = session

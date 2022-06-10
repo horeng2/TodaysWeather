@@ -7,16 +7,17 @@
 
 import Foundation
 
-class GeoInfoRepository: Decodable {
-    func fetchGeoInfo(of city: City, onCompleted: @escaping (Data) -> Void) {
-        guard let url = GeoInfoRequest(city: city).url else {
-            return
-        }
-        URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data = data else {
-                return
+class GeoInfoRepository {
+    let urlSessionProvider = APIProvider()
+    
+    func fetchGeoInfo(of city: City, completionHandler: @escaping (Result<GeoInfo, NetworkError>) -> Void) {
+        urlSessionProvider.request(requestType: GeoInfoRequest(city: city)) { (result: Result<GeoInfo, NetworkError>) in
+            switch result {
+            case .success(let decodedData):
+                completionHandler(.success(decodedData))
+            case .failure(let error):
+                completionHandler(.failure(error))
             }
-            onCompleted(data)
-        }.resume()
+        }
     }
 }
