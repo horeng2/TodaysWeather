@@ -13,6 +13,8 @@
 		48AFD2E22853163200AF543F /* GeoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2E12853163200AF543F /* GeoInfo.swift */; };
 		48AFD2E4285323CC00AF543F /* WeatherInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2E3285323CC00AF543F /* WeatherInfoRequest.swift */; };
 		48AFD2E6285323D600AF543F /* GeoInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2E5285323D600AF543F /* GeoInfoRequest.swift */; };
+		48AFD2EB28537CE000AF543F /* SecretKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48AFD2EA28537CE000AF543F /* SecretKey.plist */; };
+		48AFD2ED28537E4000AF543F /* APIKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD2EC28537E4000AF543F /* APIKeyBundle.swift */; };
 		48D84D10285195CA00B8A984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D84D0F285195CA00B8A984 /* AppDelegate.swift */; };
 		48D84D12285195CA00B8A984 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D84D11285195CA00B8A984 /* SceneDelegate.swift */; };
 		48D84D14285195CA00B8A984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D84D13285195CA00B8A984 /* ViewController.swift */; };
@@ -34,6 +36,8 @@
 		48AFD2E12853163200AF543F /* GeoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoInfo.swift; sourceTree = "<group>"; };
 		48AFD2E3285323CC00AF543F /* WeatherInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoRequest.swift; sourceTree = "<group>"; };
 		48AFD2E5285323D600AF543F /* GeoInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoInfoRequest.swift; sourceTree = "<group>"; };
+		48AFD2EA28537CE000AF543F /* SecretKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SecretKey.plist; sourceTree = "<group>"; };
+		48AFD2EC28537E4000AF543F /* APIKeyBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyBundle.swift; sourceTree = "<group>"; };
 		48D84D0C285195CA00B8A984 /* TodaysWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodaysWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D84D0F285195CA00B8A984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48D84D11285195CA00B8A984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +112,9 @@
 				48D84D15285195CA00B8A984 /* Main.storyboard */,
 				48D84D18285195CB00B8A984 /* Assets.xcassets */,
 				48D84D1A285195CB00B8A984 /* LaunchScreen.storyboard */,
+				48AFD2EA28537CE000AF543F /* SecretKey.plist */,
 				48D84D1D285195CB00B8A984 /* Info.plist */,
+				48AFD2EC28537E4000AF543F /* APIKeyBundle.swift */,
 			);
 			path = TodaysWeather;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AFD2EB28537CE000AF543F /* SecretKey.plist in Resources */,
 				48D84D1C285195CB00B8A984 /* LaunchScreen.storyboard in Resources */,
 				48D84D19285195CB00B8A984 /* Assets.xcassets in Resources */,
 				48D84D17285195CA00B8A984 /* Main.storyboard in Resources */,
@@ -208,6 +215,7 @@
 				48D84D12285195CA00B8A984 /* SceneDelegate.swift in Sources */,
 				48D84D2D2851E35800B8A984 /* WeatherType.swift in Sources */,
 				48AFD2E6285323D600AF543F /* GeoInfoRequest.swift in Sources */,
+				48AFD2ED28537E4000AF543F /* APIKeyBundle.swift in Sources */,
 				48AFD2DC2853091300AF543F /* URLSessionProvider.swift in Sources */,
 				48AFD2E4285323CC00AF543F /* WeatherInfoRequest.swift in Sources */,
 				48AFD2DE2853091900AF543F /* NetworkError.swift in Sources */,
