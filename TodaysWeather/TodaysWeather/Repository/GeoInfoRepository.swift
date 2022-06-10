@@ -7,12 +7,12 @@
 
 import Foundation
 
-class GeoInfoRepository: Repository {
+class GeoInfoRepository {
     typealias ResponseType = GeoInfo
 
     let apiProvider = APIProvider()
         
-    func fetchInfo(of city: City, completionHandler: @escaping (Result<GeoInfo, NetworkError>) -> Void) {
+    func fetchGeoInfo(of city: City, completionHandler: @escaping (Result<GeoInfo, NetworkError>) -> Void) {
         apiProvider.request(requestType: GeoInfoRequest(city: city)) { (result: Result<GeoInfo, NetworkError>) in
             switch result {
             case .success(let decodedData):

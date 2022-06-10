@@ -26,7 +26,7 @@ class GeoInfoService {
 
     func fetchOfAllCityGeoInfo() {
         City.allCases.forEach { city in
-            self.geoRepository.fetchInfo(of: city) { (result: Result<GeoInfo, NetworkError>) in
+            self.geoRepository.fetchGeoInfo(of: city) { (result: Result<GeoInfo, NetworkError>) in
                 switch result {
                 case .success(let geoInfo):
                     self.totalGeoInfo.updateValue(geoInfo, forKey: city)

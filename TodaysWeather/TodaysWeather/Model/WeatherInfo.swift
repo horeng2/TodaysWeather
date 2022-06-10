@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TodaysWeather: Decodable {
+struct WeatherInfo: Decodable {
     let weatherBasicsInfo: [WeatherBasicsInfo]
     let weatherCondition: WeatherCondition
     let systemInfo: SystemInfo

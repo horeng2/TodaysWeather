@@ -10,7 +10,6 @@ import Foundation
 protocol APIRequest {
     associatedtype ResponseType: Decodable
     
-    var city: City { get }
     var url: URL? { get }
     var urlRequest: URLRequest? { get }
 }

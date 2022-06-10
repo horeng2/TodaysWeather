@@ -7,13 +7,13 @@
 
 import Foundation
 
-class WeatherInfoRepository: Repository {
-    typealias ResponseType = TodaysWeather
+class WeatherInfoRepository {
+    typealias ResponseType = WeatherInfo
     
     let apiProvider = APIProvider()
     
-    func fetchInfo(of city: City, completionHandler: @escaping (Result<TodaysWeather, NetworkError>) -> Void) {
-        apiProvider.request(requestType: WeatherInfoRequest(city: city)) { (result: Result<TodaysWeather, NetworkError>) in
+    func fetchWeatherInfo(by cityGeoInfo: GeoInfo, completionHandler: @escaping (Result<WeatherInfo, NetworkError>) -> Void) {
+        apiProvider.request(requestType: WeatherInfoRequest(cityGeoInfo: cityGeoInfo)) { (result: Result<WeatherInfo, NetworkError>) in
             switch result {
             case .success(let decodedData):
                 completionHandler(.success(decodedData))
