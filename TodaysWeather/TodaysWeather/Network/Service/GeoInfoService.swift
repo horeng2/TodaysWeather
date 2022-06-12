@@ -9,29 +9,14 @@ import Foundation
 
 class GeoInfoService {
     let geoRepository = GeoInfoRepository()
-    var totalGeoInfo = [City: GeoInfo]()
     
-    init() {
-        City.allCases.forEach { city in
-            self.fetchGeoInfo(city: city)
-        }
-    }
-    
-    func fetchGeoInfo(city: City) {
-        self.geoRepository.fetchGeoInfo(of: city) { (result: Result<Data, NetworkError>) in
-            switch result {
-            case .success(let data):
-                guard let geoInfo = try? JSONDecoder().decode([GeoInfo].self, from: data).first else {
-                    return
-                }
-                self.totalGeoInfo.updateValue(geoInfo, forKey: city)
-            case .failure(_):
+    func decodeGeoInfo(of city: City, completionHandler: @escaping (GeoInfo) -> Void) {
+        self.geoRepository.loadGeoData(of: city) { geoData in
+            guard let decodedGeoInfo = try? JSONDecoder().decode([GeoInfo].self, from: geoData).first else {
+                print("GeoInfo \(NetworkError.parsingError)")
                 return
             }
+            completionHandler(decodedGeoInfo)
         }
-    }
-    
-    func geoInfoOfAllCities() -> [City: GeoInfo] {
-        return self.totalGeoInfo
     }
 }

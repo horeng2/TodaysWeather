@@ -10,17 +10,13 @@ import Foundation
 class WeatherInfoService {
     let weatherInfoRepository = WeatherInfoRepository()
     
-    func fetchWeatherInfo(geoInfo: GeoInfo, completionHandler: @escaping (Result<WeatherInfo, NetworkError>) -> Void) {
-        self.weatherInfoRepository.fetchWeatherInfo(by: geoInfo) { (result: Result<Data, NetworkError>) in
-            switch result {
-            case .success(let data):
-                guard let weatherInfo = try? JSONDecoder().decode(WeatherInfo.self, from: data) else {
-                    return
-                }
-                completionHandler(.success(weatherInfo))
-            case .failure(let error):
-                completionHandler(.failure(error))
+    func decodeWeatherInfo(at geoInfo: GeoInfo, completionHandler: @escaping (WeatherInfo) -> Void) {
+        self.weatherInfoRepository.loadWeatherData(by: geoInfo) { weatherData in
+            guard let decodedWeatherInfo = try? JSONDecoder().decode(WeatherInfo.self, from: weatherData) else {
+                print("WeatherInfo \(NetworkError.parsingError)")
+                return
             }
+            completionHandler(decodedWeatherInfo)
         }
     }
 }
