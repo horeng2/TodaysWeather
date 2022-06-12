@@ -19,8 +19,8 @@ class ListTableViewCell: UITableViewCell {
         guard let iconCode = weatherInfo.weatherBasicsInfo.first?.icon else {
             return
         }
-        let url = URL(string: "http://openweathermap.org/img/wn/\(iconCode)@2x.png")!
-        self.weatherIconImageView.load(url: url)
+        let urlString = "http://openweathermap.org/img/wn/\(iconCode)@2x.png"
+        self.weatherIconImageView.loadImage(url: urlString)
         self.cityNameLabel.text = weatherInfo.cityName
         self.temperatureLable.text = String(weatherInfo.weatherCondition.currentTemperatures)
         self.humidityLabel.text = String(weatherInfo.weatherCondition.currentHumidity)
@@ -28,13 +28,29 @@ class ListTableViewCell: UITableViewCell {
 }
 
 extension UIImageView {
-    func load(url: URL) {
-        guard let data = try? Data(contentsOf: url),
-              let image = UIImage(data: data) else {
-                  return
-              }
+    func loadImage(url: String) {
+        var iconImage: UIImage?
+        guard let imageURL = URL(string: url) else {
+            return
+        }
+        let iconCache = NSCache<NSString, UIImage>()
+        
+        let task = URLSession.shared.dataTask(with: imageURL) { data, _, _ in
+            guard let data = data else {
+                return
+            }
+            if let iconCacheImage = iconCache.object(forKey: url as NSString) {
+                iconImage = iconCacheImage
+            } else {
+                let newImage = UIImage(data: data)
+                iconCache.setObject(newImage ?? UIImage(), forKey: url as NSString)
+                iconImage = newImage
+            }
+        }
+        task.resume()
+        
         DispatchQueue.main.async {
-            self.image = image
+            self.image = iconImage
         }
     }
 }
