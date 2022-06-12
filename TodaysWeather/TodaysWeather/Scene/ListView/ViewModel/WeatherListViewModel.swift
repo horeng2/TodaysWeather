@@ -10,7 +10,24 @@ import Foundation
 class WeatherListViewModel {
     let weatherInfoService = WeatherInfoService()
     let geoInfoService = GeoInfoService()
-
+    var test: () -> Void = {}
+    var allData: [WeatherInfo] = [] {
+        didSet {
+            if allData.count == City.allCases.count {
+                self.test()
+            }
+        }
+    }
+    
+    func allFetch() {
+        self.allData.removeAll()
+        City.allCases.forEach { city in
+            fetchWeatherInfo(of: city) { weatherInfo in
+                self.allData.append(weatherInfo)
+            }
+        }
+    }
+    
     func fetchWeatherInfo(of city: City, completionHandler: @escaping (WeatherInfo) -> Void) {
         self.geoInfoService.decodeGeoInfo(of: city) { geoInfo in
             self.weatherInfoService.decodeWeatherInfo(at: geoInfo) { weatherInfo in
