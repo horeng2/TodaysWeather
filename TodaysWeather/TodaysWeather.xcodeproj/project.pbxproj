@@ -32,6 +32,7 @@
 		48AFD3922853C87700AF543F /* GeoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3782853C87700AF543F /* GeoInfo.swift */; };
 		48AFD3942853C87700AF543F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD37A2853C87700AF543F /* SceneDelegate.swift */; };
 		48AFD3AB2853F3D300AF543F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3AA2853F3D300AF543F /* ListViewController.swift */; };
+		48AFD3AD285613C400AF543F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3AC285613C400AF543F /* ListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		48AFD3792853C87700AF543F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48AFD37A2853C87700AF543F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		48AFD3AA2853F3D300AF543F /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		48AFD3AC285613C400AF543F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		48D84D0C285195CA00B8A984 /* TodaysWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodaysWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				48AFD3AA2853F3D300AF543F /* ListViewController.swift */,
+				48AFD3AC285613C400AF543F /* ListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				48AFD37B2853C87700AF543F /* GeoInfoRepository.swift in Sources */,
 				48AFD3802853C87700AF543F /* WeatherInfo.swift in Sources */,
 				48AFD3812853C87700AF543F /* WeatherInfoService.swift in Sources */,
+				48AFD3AD285613C400AF543F /* ListTableViewCell.swift in Sources */,
 				48AFD38E2853C87700AF543F /* WeatherCondition.swift in Sources */,
 				48AFD3842853C87700AF543F /* WeatherInfoRequest.swift in Sources */,
 				48AFD3832853C87700AF543F /* APIRequest.swift in Sources */,

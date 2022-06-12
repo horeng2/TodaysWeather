@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CNk-ib-tN0" userLabel="List Table View Cell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CNk-ib-tN0" userLabel="List Table View Cell" customClass="ListTableViewCell" customModule="TodaysWeather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="100.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CNk-ib-tN0" id="KQP-bc-IyB">
@@ -72,6 +72,14 @@
                                                 <constraint firstAttribute="trailing" secondItem="pub-bH-mwh" secondAttribute="trailing" id="jqo-SI-mYF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="HumidityLabel" destination="LW0-9F-w3l" id="nlY-Fb-M6c"/>
+                                            <outlet property="cityNameLabel" destination="2Cm-QA-YOC" id="WHW-EU-yHP"/>
+                                            <outlet property="temperatureLable" destination="N2m-Sj-dJK" id="yBt-My-O1G"/>
+                                            <outlet property="totalInfoStackView" destination="pub-bH-mwh" id="BdF-Mt-Bf1"/>
+                                            <outlet property="weatherIconImageView" destination="XOR-aO-WMT" id="Sdn-S8-iBV"/>
+                                            <outlet property="weatherInfoStackView" destination="75Q-tB-LTZ" id="el4-ad-HQm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -80,6 +88,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="sdl-VQ-bfa"/>
+                    <connections>
+                        <outlet property="listTableView" destination="TZI-p2-Bi0" id="6lb-Na-hVh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11A-6V-Nkt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
