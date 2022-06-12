@@ -12,13 +12,13 @@ class GeoInfoRepository {
 
     let apiProvider = APIProvider()
         
-    func fetchGeoInfo(of city: City, completionHandler: @escaping (Result<Data, NetworkError>) -> Void) {
+    func loadGeoData(of city: City, completionHandler: @escaping (Data) -> Void) {
         apiProvider.request(requestType: GeoInfoRequest(city: city)) { (result: Result<Data, NetworkError>) in
             switch result {
             case .success(let data):
-                completionHandler(.success(data))
+                completionHandler(data)
             case .failure(let error):
-                completionHandler(.failure(error))
+                print(error)
             }
         }
     }
