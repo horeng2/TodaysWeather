@@ -30,7 +30,6 @@
 		48AFD3902853C87700AF543F /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3762853C87700AF543F /* City.swift */; };
 		48AFD3912853C87700AF543F /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3772853C87700AF543F /* WeatherType.swift */; };
 		48AFD3922853C87700AF543F /* GeoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3782853C87700AF543F /* GeoInfo.swift */; };
-		48AFD3932853C87700AF543F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48AFD3792853C87700AF543F /* Info.plist */; };
 		48AFD3942853C87700AF543F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD37A2853C87700AF543F /* SceneDelegate.swift */; };
 		48AFD3AB2853F3D300AF543F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3AA2853F3D300AF543F /* ListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -107,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				48AFD3572853C87700AF543F /* Provider */,
-				48AFD3512853C87700AF543F /* Repository */,
 				48AFD3592853C87700AF543F /* Service */,
+				48AFD3512853C87700AF543F /* Repository */,
 				48AFD3632853C87700AF543F /* Error */,
 			);
 			path = Network;
@@ -298,7 +297,6 @@
 				48AFD3882853C87700AF543F /* LaunchScreen.storyboard in Resources */,
 				48AFD3872853C87700AF543F /* Assets.xcassets in Resources */,
 				48AFD37E2853C87700AF543F /* SecretKey.plist in Resources */,
-				48AFD3932853C87700AF543F /* Info.plist in Resources */,
 				48AFD3892853C87700AF543F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
