@@ -15,6 +15,7 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.listTableView.dataSource = self
+        self.listTableView.delegate = self
         self.vm.test = {
             self.weather = self.vm.allData
             DispatchQueue.main.async {
@@ -23,7 +24,6 @@ class ListViewController: UIViewController {
         }
         self.vm.allFetch()
     }
-
 
 }
 
@@ -34,14 +34,21 @@ extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if weather.isEmpty {
+            tableView.isHidden = true
             return UITableViewCell()
         }
+        tableView.isHidden = false
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as? ListTableViewCell else {
             return UITableViewCell()
         }
-        
         cell.configure(weatherInfo: weather[indexPath.row])
         
         return cell
+    }
+}
+
+extension ListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 }
