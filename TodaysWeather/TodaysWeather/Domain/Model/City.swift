@@ -20,7 +20,7 @@ enum City: String, CaseIterable, Decodable {
     case Seoul = "서울"
     case Sokcho = "속초"
     case Suwon = "수원"
-    case Sunsheon = "순천"
+    case Suncheon = "순천"
     case Ulsan = "울산"
     case Iksan = "익산"
     case Jeonju = "전주"
