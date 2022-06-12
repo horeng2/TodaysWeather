@@ -27,11 +27,11 @@ class ListTableViewCell: UITableViewCell {
         self.temperatureLable.text = "현재기온: \(weatherInfo.weatherCondition.currentTemperatures)"
         self.humidityLabel.text = "현재습도: \(weatherInfo.weatherCondition.currentHumidity)"
     }
+
 }
 
 extension UIImageView {
     func loadImage(url: String) {
-        var iconImage: UIImage?
         guard let imageURL = URL(string: url) else {
             return
         }
@@ -42,18 +42,17 @@ extension UIImageView {
                 return
             }
             if let iconCacheImage = iconCache.object(forKey: url as NSString) {
-                iconImage = iconCacheImage
+                self.image = iconCacheImage
             } else {
                 let newImage = UIImage(data: data)
                 iconCache.setObject(newImage ?? UIImage(), forKey: url as NSString)
-                iconImage = newImage
+                DispatchQueue.main.async {
+                    self.image = newImage
+                }
             }
         }
         task.resume()
         
-        DispatchQueue.main.async {
-            self.image = iconImage
-        }
     }
 }
 
