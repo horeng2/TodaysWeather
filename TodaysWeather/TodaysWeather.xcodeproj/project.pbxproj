@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48A3C8CA285656D800BDA75E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3C8C9285656D800BDA75E /* DetailViewController.swift */; };
 		48AFD37B2853C87700AF543F /* GeoInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3522853C87700AF543F /* GeoInfoRepository.swift */; };
 		48AFD37C2853C87700AF543F /* WeatherInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3532853C87700AF543F /* WeatherInfoRepository.swift */; };
 		48AFD37D2853C87700AF543F /* APIKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3542853C87700AF543F /* APIKeyBundle.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48A3C8C9285656D800BDA75E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		48AFD3522853C87700AF543F /* GeoInfoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoInfoRepository.swift; sourceTree = "<group>"; };
 		48AFD3532853C87700AF543F /* WeatherInfoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInfoRepository.swift; sourceTree = "<group>"; };
 		48AFD3542853C87700AF543F /* APIKeyBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeyBundle.swift; sourceTree = "<group>"; };
@@ -77,6 +79,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48A3C8CB285656DD00BDA75E /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				48A3C8CD285656F500BDA75E /* ViewModel */,
+				48A3C8CC285656F000BDA75E /* View */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		48A3C8CC285656F000BDA75E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48A3C8C9285656D800BDA75E /* DetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		48A3C8CD285656F500BDA75E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		48AFD3502853C87700AF543F /* TodaysWeather */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				48AFD36C2853C87700AF543F /* ListView */,
+				48A3C8CB285656DD00BDA75E /* DetailView */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -313,6 +340,7 @@
 			files = (
 				48AFD38A2853C87700AF543F /* AppDelegate.swift in Sources */,
 				48AFD38F2853C87700AF543F /* SystemInfo.swift in Sources */,
+				48A3C8CA285656D800BDA75E /* DetailViewController.swift in Sources */,
 				48AFD3902853C87700AF543F /* City.swift in Sources */,
 				48AFD3822853C87700AF543F /* GeoInfoService.swift in Sources */,
 				48AFD37C2853C87700AF543F /* WeatherInfoRepository.swift in Sources */,
