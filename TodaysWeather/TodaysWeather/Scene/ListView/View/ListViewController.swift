@@ -17,7 +17,9 @@ class ListViewController: UIViewController {
         self.listTableView.dataSource = self
         self.vm.test = {
             self.weather = self.vm.allData
-            self.listTableView.reloadData()
+            DispatchQueue.main.async {
+                self.listTableView.reloadData()
+            }
         }
         self.vm.allFetch()
     }

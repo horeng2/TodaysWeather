@@ -15,6 +15,8 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var temperatureLable: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     
+    
+    
     func configure(weatherInfo: WeatherInfo) {
         guard let iconCode = weatherInfo.weatherBasicsInfo.first?.icon else {
             return
@@ -22,8 +24,8 @@ class ListTableViewCell: UITableViewCell {
         let urlString = "http://openweathermap.org/img/wn/\(iconCode)@2x.png"
         self.weatherIconImageView.loadImage(url: urlString)
         self.cityNameLabel.text = weatherInfo.cityName
-        self.temperatureLable.text = String(weatherInfo.weatherCondition.currentTemperatures)
-        self.humidityLabel.text = String(weatherInfo.weatherCondition.currentHumidity)
+        self.temperatureLable.text = "현재기온: \(weatherInfo.weatherCondition.currentTemperatures)"
+        self.humidityLabel.text = "현재습도: \(weatherInfo.weatherCondition.currentHumidity)"
     }
 }
 
