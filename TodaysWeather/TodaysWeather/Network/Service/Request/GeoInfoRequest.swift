@@ -13,7 +13,7 @@ struct GeoInfoRequest: APIRequest {
     let city: City
     
     var url: URL? {
-        URL(string: "http://api.openweathermap.org/geo/1.0/direct?q=\(city.self)&limit=1&appid=\(Bundle.main.openWeatherAPIKey)&lang=kr")
+        URL(string: "http://api.openweathermap.org/geo/1.0/direct?q=\(city.self),kr&limit=1&appid=\(Bundle.main.openWeatherAPIKey)")
     }
     
     var urlRequest: URLRequest? {
