@@ -8,11 +8,13 @@
 import Foundation
 
 struct WeatherBasicsInfo: Decodable {
+    let weatherID: Int
     let weatherCondition: String
     let description: String
     let icon: String
     
     private enum CodingKeys: String, CodingKey {
+        case weatherID = "id"
         case weatherCondition = "main"
         case description
         case icon

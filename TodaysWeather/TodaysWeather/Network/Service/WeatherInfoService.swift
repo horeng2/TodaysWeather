@@ -17,7 +17,7 @@ class WeatherInfoService {
             }
             let weatherInfomation = WeatherInformation(
                 weatherCondition: basicInfo.weatherCondition,
-                description: basicInfo.description,
+                description: self.convertDescription(from: basicInfo.weatherID),
                 iconCode: basicInfo.icon,
                 currentTemperatures: weatherRawData.detailInfo.currentTemperatures.roundToInt(),
                 feelsTemperatures: weatherRawData.detailInfo.feelsTemperatures.roundToInt(),
@@ -38,9 +38,33 @@ class WeatherInfoService {
                 print("WeatherInfo \(NetworkError.parsingError)")
                 return
             }
-            
-            
             completionHandler(decodedWeatherData)
         }
+    }
+    
+    func convertDescription(from weatherID: Int) -> String {
+        let rain = (200...599)
+        let snow = (600...699)
+        let overcast = (700...799)
+        let cloudy = (801...899)
+        let clear = 800
+
+        let weatherType: WeatherType = {
+            if rain.contains(weatherID) {
+                return WeatherType.rain
+            } else if snow.contains(weatherID) {
+                return WeatherType.rain
+            } else if overcast.contains(weatherID) {
+                return WeatherType.overcast
+            } else if cloudy.contains(weatherID) {
+                return WeatherType.cloudy
+            } else if clear == weatherID {
+                return WeatherType.clear
+            } else {
+                return WeatherType.unknown
+            }
+        }()
+        
+        return weatherType.description()
     }
 }
