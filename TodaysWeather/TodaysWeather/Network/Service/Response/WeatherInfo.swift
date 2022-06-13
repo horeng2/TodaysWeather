@@ -10,12 +10,14 @@ import Foundation
 struct WeatherInfo: Decodable {
     let weatherBasicsInfo: [WeatherBasicsInfo]
     let weatherCondition: WeatherCondition
+    let windCondition: WindCondition
     let systemInfo: SystemInfo
     let cityName: String
     
     private enum CodingKeys: String, CodingKey {
         case weatherBasicsInfo = "weather"
         case weatherCondition = "main"
+        case windCondition = "wind"
         case systemInfo = "sys"
         case cityName = "name"
     }

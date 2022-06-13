@@ -24,7 +24,17 @@ class ListViewController: UIViewController {
         }
         self.vm.allFetch()
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let vc = segue.destination as? DetailViewController
+            if let index = sender as? Int{
+                vc?.weatherInfo = weather[index]
+            }
+        }
+        
+    }
+    
 }
 
 extension ListViewController: UITableViewDataSource {
@@ -44,6 +54,10 @@ extension ListViewController: UITableViewDataSource {
         cell.configure(weatherInfo: weather[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
     }
 }
 

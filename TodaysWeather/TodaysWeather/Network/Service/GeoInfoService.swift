@@ -17,6 +17,7 @@ class GeoInfoService {
                 return
             }
             completionHandler(decodedGeoInfo)
+            return
         }
     }
 }

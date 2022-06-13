@@ -84,7 +84,6 @@
                                             <outlet property="totalInfoStackView" destination="pub-bH-mwh" id="BdF-Mt-Bf1"/>
                                             <outlet property="weatherIconImageView" destination="XOR-aO-WMT" id="Sdn-S8-iBV"/>
                                             <outlet property="weatherInfoStackView" destination="75Q-tB-LTZ" id="el4-ad-HQm"/>
-                                            <segue destination="HIa-PU-Dug" kind="push" id="aQn-M9-uwt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -96,6 +95,7 @@
                     <navigationItem key="navigationItem" title="오늘의 날씨" id="sdl-VQ-bfa"/>
                     <connections>
                         <outlet property="listTableView" destination="TZI-p2-Bi0" id="6lb-Na-hVh"/>
+                        <segue destination="HIa-PU-Dug" kind="show" identifier="showDetail" id="zCQ-l3-Vde"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11A-6V-Nkt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -289,6 +289,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="31W-IY-uEp"/>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="Fjm-lc-uL0" id="224-6k-VNQ"/>
+                        <outlet property="currentTemperatureLabel" destination="tcR-S1-N3N" id="hby-hz-0im"/>
+                        <outlet property="discriptionLabel" destination="oFJ-g0-dmq" id="MX4-pc-fSg"/>
+                        <outlet property="feelsTemperatureLabel" destination="Lnm-WU-1Ps" id="Avp-fg-pHV"/>
+                        <outlet property="humidityLabel" destination="AOd-Gp-dMh" id="GZz-As-mJT"/>
+                        <outlet property="iconImageView" destination="TJs-Ur-5Cj" id="pIO-nv-USd"/>
+                        <outlet property="maxTemperatureLabel" destination="RnV-23-vG6" id="StQ-ex-wXU"/>
+                        <outlet property="minTemperatureLabel" destination="CKP-05-juD" id="LlB-5r-N5Y"/>
+                        <outlet property="pressureLabel" destination="p8l-fI-MlS" id="i1l-cp-m9J"/>
+                        <outlet property="windSpeedLabel" destination="9xk-13-hCM" id="HCn-lI-t3H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2R-Qj-4to" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
