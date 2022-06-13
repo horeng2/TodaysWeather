@@ -14,6 +14,9 @@ class WeatherListViewModel {
     var allWeatherInfo: [WeatherInformation] = [] {
         didSet {
             if allWeatherInfo.count == City.allCases.count {
+                self.allWeatherInfo = self.allWeatherInfo.sorted {
+                    $0.cityName < $1.cityName
+                }
                 self.allWeatherInfoUpdated()
             }
         }
