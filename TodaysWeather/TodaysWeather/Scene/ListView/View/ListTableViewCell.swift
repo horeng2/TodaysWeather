@@ -15,44 +15,10 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var temperatureLable: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     
-    
-    
     func configure(weatherInfo: WeatherInfo) {
-        guard let iconCode = weatherInfo.weatherBasicsInfo.first?.icon else {
-            return
-        }
-        let urlString = "http://openweathermap.org/img/wn/\(iconCode)@2x.png"
-        self.weatherIconImageView.loadImage(url: urlString)
+        self.weatherIconImageView.loadImage(iconCode: weatherInfo.weatherBasicsInfo.first?.icon)
         self.cityNameLabel.text = weatherInfo.cityName
         self.temperatureLable.text = "현재기온: \(weatherInfo.weatherCondition.currentTemperatures)"
         self.humidityLabel.text = "현재습도: \(weatherInfo.weatherCondition.currentHumidity)"
     }
-
 }
-
-extension UIImageView {
-    func loadImage(url: String) {
-        guard let imageURL = URL(string: url) else {
-            return
-        }
-        let iconCache = NSCache<NSString, UIImage>()
-        
-        let task = URLSession.shared.dataTask(with: imageURL) { data, _, _ in
-            guard let data = data else {
-                return
-            }
-            if let iconCacheImage = iconCache.object(forKey: url as NSString) {
-                self.image = iconCacheImage
-            } else {
-                let newImage = UIImage(data: data)
-                iconCache.setObject(newImage ?? UIImage(), forKey: url as NSString)
-                DispatchQueue.main.async {
-                    self.image = newImage
-                }
-            }
-        }
-        task.resume()
-        
-    }
-}
-

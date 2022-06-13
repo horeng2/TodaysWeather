@@ -29,12 +29,8 @@ class DetailViewController: UIViewController {
         guard let weatherInfo = self.weatherInfo else {
             return
         }
-        
-        guard let iconCode = weatherInfo.weatherBasicsInfo.first?.icon else {
-            return
-        }
         self.cityNameLabel.text = weatherInfo.cityName
-        self.iconImageView.loadImage(url: "http://openweathermap.org/img/wn/\(iconCode)@2x.png")
+        self.iconImageView.loadImage(iconCode: weatherInfo.weatherBasicsInfo.first?.icon)
         self.discriptionLabel.text = weatherInfo.weatherBasicsInfo.description
         self.currentTemperatureLabel.text = String(weatherInfo.weatherCondition.currentTemperatures)
         self.feelsTemperatureLabel.text = String(weatherInfo.weatherCondition.sensibleTemperatures)
@@ -44,16 +40,4 @@ class DetailViewController: UIViewController {
         self.windSpeedLabel.text = String(weatherInfo.windCondition.speed)
         self.pressureLabel.text = String(weatherInfo.weatherCondition.pressure)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
