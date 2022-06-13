@@ -18,5 +18,5 @@ struct WeatherInformation {
     let maximumTemperatures: Int
     let pressure: Int
     let windSpeed: Int
-    let cityName: String
+    var cityName: String
 }
