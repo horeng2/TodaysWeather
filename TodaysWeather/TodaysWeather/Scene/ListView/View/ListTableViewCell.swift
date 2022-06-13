@@ -15,10 +15,10 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var temperatureLable: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     
-    func configure(weatherInfo: WeatherInfo) {
-        self.weatherIconImageView.loadImage(iconCode: weatherInfo.weatherBasicsInfo.first?.icon)
+    func configure(weatherInfo: WeatherInformation) {
+        self.weatherIconImageView.loadImage(iconCode: weatherInfo.iconCode)
         self.cityNameLabel.text = weatherInfo.cityName
-        self.temperatureLable.text = "현재기온: \(weatherInfo.weatherCondition.currentTemperatures)"
-        self.humidityLabel.text = "현재습도: \(weatherInfo.weatherCondition.currentHumidity)"
+        self.temperatureLable.text = "현재기온: \(weatherInfo.currentTemperatures)"
+        self.humidityLabel.text = "현재습도: \(weatherInfo.currentHumidity)"
     }
 }

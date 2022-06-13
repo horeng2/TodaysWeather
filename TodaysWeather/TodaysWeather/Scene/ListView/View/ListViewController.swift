@@ -10,7 +10,7 @@ import UIKit
 class ListViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     let weatherListViewModel = WeatherListViewModel()
-    var weather = [WeatherInfo]()
+    var weather = [WeatherInformation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

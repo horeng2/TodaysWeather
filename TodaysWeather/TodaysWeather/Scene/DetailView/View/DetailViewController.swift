@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var windSpeedLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
-    var weatherInfo: WeatherInfo?
+    var weatherInfo: WeatherInformation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +31,14 @@ class DetailViewController: UIViewController {
         }
         
         self.cityNameLabel.text = weatherInfo.cityName
-        self.iconImageView.loadImage(iconCode: weatherInfo.weatherBasicsInfo.first?.icon)
-        self.discriptionLabel.text = weatherInfo.weatherBasicsInfo.first?.description
-        self.currentTemperatureLabel.text = String(weatherInfo.weatherCondition.currentTemperatures)
-        self.feelsTemperatureLabel.text = String(weatherInfo.weatherCondition.sensibleTemperatures)
-        self.minTemperatureLabel.text = String(weatherInfo.weatherCondition.minimumTemperatures)
-        self.maxTemperatureLabel.text = String(weatherInfo.weatherCondition.maximumTemperatures)
-        self.humidityLabel.text = String(weatherInfo.weatherCondition.currentHumidity)
-        self.windSpeedLabel.text = String(weatherInfo.windCondition.speed)
-        self.pressureLabel.text = String(weatherInfo.weatherCondition.pressure)
+        self.iconImageView.loadImage(iconCode: weatherInfo.iconCode)
+        self.discriptionLabel.text = weatherInfo.description
+        self.currentTemperatureLabel.text = "\(weatherInfo.currentTemperatures)"
+        self.feelsTemperatureLabel.text = "\(weatherInfo.feelsTemperatures)"
+        self.minTemperatureLabel.text = "\(weatherInfo.minimumTemperatures)"
+        self.maxTemperatureLabel.text = "\(weatherInfo.maximumTemperatures)"
+        self.humidityLabel.text = "\(weatherInfo.currentHumidity)"
+        self.windSpeedLabel.text = "\(weatherInfo.windSpeed)"
+        self.pressureLabel.text = "\(weatherInfo.pressure)"
     }
 }

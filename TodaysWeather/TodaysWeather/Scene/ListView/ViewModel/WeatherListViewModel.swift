@@ -11,7 +11,7 @@ class WeatherListViewModel {
     let weatherInfoService = WeatherInfoService()
     let geoInfoService = GeoInfoService()
     var test: () -> Void = {}
-    var allData: [WeatherInfo] = [] {
+    var allData: [WeatherInformation] = [] {
         didSet {
             if allData.count == City.allCases.count {
                 self.test()
@@ -28,9 +28,9 @@ class WeatherListViewModel {
         }
     }
     
-    func fetchWeatherInfo(of city: City, completionHandler: @escaping (WeatherInfo) -> Void) {
+    func fetchWeatherInfo(of city: City, completionHandler: @escaping (WeatherInformation) -> Void) {
         self.geoInfoService.decodeGeoInfo(of: city) { geoInfo in
-            self.weatherInfoService.decodeWeatherInfo(at: geoInfo) { weatherInfo in
+            self.weatherInfoService.loadWeatherInfomation(at: geoInfo) { weatherInfo in
                 completionHandler(weatherInfo)
             }
         }
