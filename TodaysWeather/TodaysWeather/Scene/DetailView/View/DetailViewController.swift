@@ -29,9 +29,10 @@ class DetailViewController: UIViewController {
         guard let weatherInfo = self.weatherInfo else {
             return
         }
+        
         self.cityNameLabel.text = weatherInfo.cityName
         self.iconImageView.loadImage(iconCode: weatherInfo.weatherBasicsInfo.first?.icon)
-        self.discriptionLabel.text = weatherInfo.weatherBasicsInfo.description
+        self.discriptionLabel.text = weatherInfo.weatherBasicsInfo.first?.description
         self.currentTemperatureLabel.text = String(weatherInfo.weatherCondition.currentTemperatures)
         self.feelsTemperatureLabel.text = String(weatherInfo.weatherCondition.sensibleTemperatures)
         self.minTemperatureLabel.text = String(weatherInfo.weatherCondition.minimumTemperatures)

@@ -9,20 +9,21 @@ import UIKit
 
 class ListViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
-    let vm = WeatherListViewModel()
+    let weatherListViewModel = WeatherListViewModel()
     var weather = [WeatherInfo]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.listTableView.dataSource = self
         self.listTableView.delegate = self
-        self.vm.test = {
-            self.weather = self.vm.allData
+        
+        self.weatherListViewModel.test = {
+            self.weather = self.weatherListViewModel.allData
             DispatchQueue.main.async {
                 self.listTableView.reloadData()
             }
         }
-        self.vm.allFetch()
+        self.weatherListViewModel.allFetch()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -32,9 +33,7 @@ class ListViewController: UIViewController {
                 vc?.weatherInfo = weather[index]
             }
         }
-        
     }
-    
 }
 
 extension ListViewController: UITableViewDataSource {

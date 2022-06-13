@@ -16,6 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앗! 로딩중!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hky-pH-ZTJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TZI-p2-Bi0" userLabel="List Table View">
                                 <rect key="frame" x="0.0" y="39" width="414" height="818"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -91,6 +98,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n5r-78-lvm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n5r-78-lvm" firstAttribute="trailing" secondItem="Hky-pH-ZTJ" secondAttribute="trailing" id="E0F-ZS-CfW"/>
+                            <constraint firstItem="Hky-pH-ZTJ" firstAttribute="top" secondItem="n5r-78-lvm" secondAttribute="top" id="GdX-dc-yZ1"/>
+                            <constraint firstItem="Hky-pH-ZTJ" firstAttribute="leading" secondItem="n5r-78-lvm" secondAttribute="leading" id="NZa-Sz-brZ"/>
+                            <constraint firstItem="n5r-78-lvm" firstAttribute="bottom" secondItem="Hky-pH-ZTJ" secondAttribute="bottom" id="emS-7K-LRQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="오늘의 날씨" id="sdl-VQ-bfa"/>
                     <connections>
