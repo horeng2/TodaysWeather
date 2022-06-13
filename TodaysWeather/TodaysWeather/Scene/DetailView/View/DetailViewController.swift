@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "nightSky")!)
     }
     
     func configure() {

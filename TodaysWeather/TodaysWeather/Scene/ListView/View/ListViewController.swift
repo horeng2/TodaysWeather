@@ -35,6 +35,7 @@ class ListViewController: UIViewController {
     func configureTableView() {
         self.listTableView.dataSource = self
         self.listTableView.delegate = self
+        self.listTableView.backgroundView = UIImageView(image: UIImage(named: "sky"))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,3 +85,4 @@ extension ListViewController: UITableViewDelegate {
         cell.backgroundColor = UIColor.clear
     }
 }
+
