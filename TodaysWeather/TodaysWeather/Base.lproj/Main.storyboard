@@ -11,11 +11,14 @@
         <!--오늘의 날씨-->
         <scene sceneID="zv0-6i-Zpt">
             <objects>
-                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="overFullScreen" id="lyq-Dg-4DU" customClass="ListViewController" customModule="TodaysWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="lyq-Dg-4DU" customClass="ListViewController" customModule="TodaysWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eEP-9q-xXx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="zeG-BA-aRd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앗! 로딩중!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hky-pH-ZTJ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -23,20 +26,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TZI-p2-Bi0" userLabel="List Table View">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TZI-p2-Bi0" userLabel="List Table View">
                                 <rect key="frame" x="0.0" y="39" width="414" height="818"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" systemColor="systemGray4Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListTableViewCell" id="CNk-ib-tN0" userLabel="List Table View Cell" customClass="ListTableViewCell" customModule="TodaysWeather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="70.5"/>
+                                        <rect key="frame" x="20" y="49.5" width="374" height="70.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CNk-ib-tN0" id="KQP-bc-IyB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="70.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="pub-bH-mwh" userLabel="Weather Stack View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="70.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="XOR-aO-WMT" userLabel="Icon Image View">
                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70.5"/>
@@ -46,22 +50,22 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cm-QA-YOC" userLabel="City Name Label">
-                                                            <rect key="frame" x="84" y="0.0" width="141" height="70.5"/>
+                                                            <rect key="frame" x="84" y="0.0" width="127" height="70.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="75Q-tB-LTZ" userLabel="Weather Info Stack View">
-                                                            <rect key="frame" x="239" y="0.0" width="175" height="70.5"/>
+                                                            <rect key="frame" x="225" y="0.0" width="149" height="70.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1h-WN-CTY" userLabel="Temp Lable">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="35.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="149" height="35.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekT-hl-mNW" userLabel="Humidity Lable">
-                                                                    <rect key="frame" x="0.0" y="35.5" width="175" height="35"/>
+                                                                    <rect key="frame" x="0.0" y="35.5" width="149" height="35"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -84,6 +88,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="pub-bH-mwh" secondAttribute="trailing" id="jqo-SI-mYF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="cityNameLabel" destination="2Cm-QA-YOC" id="WHW-EU-yHP"/>
                                             <outlet property="humidityLabel" destination="ekT-hl-mNW" id="4Sl-yQ-5Fi"/>
@@ -99,10 +104,14 @@
                         <viewLayoutGuide key="safeArea" id="n5r-78-lvm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="zeG-BA-aRd" firstAttribute="leading" secondItem="n5r-78-lvm" secondAttribute="leading" id="4Qz-kq-1me"/>
+                            <constraint firstItem="n5r-78-lvm" firstAttribute="bottom" secondItem="zeG-BA-aRd" secondAttribute="bottom" id="DP3-vr-Taw"/>
                             <constraint firstItem="n5r-78-lvm" firstAttribute="trailing" secondItem="Hky-pH-ZTJ" secondAttribute="trailing" id="E0F-ZS-CfW"/>
                             <constraint firstItem="Hky-pH-ZTJ" firstAttribute="top" secondItem="n5r-78-lvm" secondAttribute="top" id="GdX-dc-yZ1"/>
                             <constraint firstItem="Hky-pH-ZTJ" firstAttribute="leading" secondItem="n5r-78-lvm" secondAttribute="leading" id="NZa-Sz-brZ"/>
+                            <constraint firstItem="zeG-BA-aRd" firstAttribute="top" secondItem="n5r-78-lvm" secondAttribute="top" id="Z9a-Dg-C03"/>
                             <constraint firstItem="n5r-78-lvm" firstAttribute="bottom" secondItem="Hky-pH-ZTJ" secondAttribute="bottom" id="emS-7K-LRQ"/>
+                            <constraint firstItem="n5r-78-lvm" firstAttribute="trailing" secondItem="zeG-BA-aRd" secondAttribute="trailing" id="hcY-S7-4cn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="오늘의 날씨" id="sdl-VQ-bfa"/>
@@ -322,7 +331,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Gwd-mM-vvZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1a1-H7-UyF" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="1a1-H7-UyF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="edr-13-h7T">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -339,9 +348,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="sky" width="730" height="1330"/>
         <image name="스크린샷 2022-01-10 오후 7.44.11" width="260" height="246"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

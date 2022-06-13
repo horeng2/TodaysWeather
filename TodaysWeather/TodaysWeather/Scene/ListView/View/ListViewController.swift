@@ -67,4 +67,12 @@ extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cellBackgroundView = UIView()
+        cellBackgroundView.backgroundColor = .clear
+        
+        cell.selectedBackgroundView = cellBackgroundView
+        cell.backgroundColor = UIColor.clear
+    }
 }
