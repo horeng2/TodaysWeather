@@ -27,7 +27,7 @@ class WeatherListViewModel {
         City.allCases.forEach { city in
             fetchWeatherInfo(of: city) { weatherInfo in
                 var weatherInfoKR = weatherInfo
-                weatherInfoKR.cityName = city.koreanName()
+                weatherInfoKR.cityName = city.name()
                 self.allWeatherInfo.append(weatherInfoKR)
             }
         }
