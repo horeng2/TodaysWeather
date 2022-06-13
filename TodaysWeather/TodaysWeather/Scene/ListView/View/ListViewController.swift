@@ -14,16 +14,19 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.listTableView.dataSource = self
-        self.listTableView.delegate = self
-        
-        self.weatherListViewModel.test = {
-            self.weather = self.weatherListViewModel.allData
+        self.configureTableView()
+        self.weatherListViewModel.allWeatherInfoUpdated = {
+            self.weather = self.weatherListViewModel.allWeatherInfo
             DispatchQueue.main.async {
                 self.listTableView.reloadData()
             }
         }
-        self.weatherListViewModel.allFetch()
+        self.weatherListViewModel.fetchAllWeatherInfo()
+    }
+    
+    func configureTableView() {
+        self.listTableView.dataSource = self
+        self.listTableView.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
