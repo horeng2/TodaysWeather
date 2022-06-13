@@ -12,6 +12,7 @@
 		48A3C8D12856E2DF00BDA75E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3C8D02856E2DF00BDA75E /* UIImageView+Extension.swift */; };
 		48A3C8D32857268800BDA75E /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3C8D22857268800BDA75E /* Double+Extension.swift */; };
 		48A3C8D52857280300BDA75E /* WeatherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3C8D42857280300BDA75E /* WeatherInformation.swift */; };
+		48A3C8D828572F5800BDA75E /* TemperatureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3C8D728572F5800BDA75E /* TemperatureUnit.swift */; };
 		48AFD37B2853C87700AF543F /* GeoInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3522853C87700AF543F /* GeoInfoRepository.swift */; };
 		48AFD37C2853C87700AF543F /* WeatherInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3532853C87700AF543F /* WeatherInfoRepository.swift */; };
 		48AFD37D2853C87700AF543F /* APIKeyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3542853C87700AF543F /* APIKeyBundle.swift */; };
@@ -46,6 +47,7 @@
 		48A3C8D02856E2DF00BDA75E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		48A3C8D22857268800BDA75E /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		48A3C8D42857280300BDA75E /* WeatherInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInformation.swift; sourceTree = "<group>"; };
+		48A3C8D728572F5800BDA75E /* TemperatureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureUnit.swift; sourceTree = "<group>"; };
 		48AFD3522853C87700AF543F /* GeoInfoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoInfoRepository.swift; sourceTree = "<group>"; };
 		48AFD3532853C87700AF543F /* WeatherInfoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInfoRepository.swift; sourceTree = "<group>"; };
 		48AFD3542853C87700AF543F /* APIKeyBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeyBundle.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				48A3C8D42857280300BDA75E /* WeatherInformation.swift */,
+				48A3C8D728572F5800BDA75E /* TemperatureUnit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				48AFD3942853C87700AF543F /* SceneDelegate.swift in Sources */,
 				48AFD37B2853C87700AF543F /* GeoInfoRepository.swift in Sources */,
 				48A3C8D12856E2DF00BDA75E /* UIImageView+Extension.swift in Sources */,
+				48A3C8D828572F5800BDA75E /* TemperatureUnit.swift in Sources */,
 				48AFD3802853C87700AF543F /* WeatherRawData.swift in Sources */,
 				48AFD3812853C87700AF543F /* WeatherInfoService.swift in Sources */,
 				48AFD3AD285613C400AF543F /* ListTableViewCell.swift in Sources */,

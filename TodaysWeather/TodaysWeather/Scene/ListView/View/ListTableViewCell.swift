@@ -18,7 +18,7 @@ class ListTableViewCell: UITableViewCell {
     func configure(weatherInfo: WeatherInformation) {
         self.weatherIconImageView.loadImage(iconCode: weatherInfo.iconCode)
         self.cityNameLabel.text = weatherInfo.cityName
-        self.temperatureLable.text = "현재기온: \(weatherInfo.currentTemperatures)"
-        self.humidityLabel.text = "현재습도: \(weatherInfo.currentHumidity)"
+        self.temperatureLable.text = "현재기온: \(weatherInfo.currentTemperatures)\(TemperatureUnit.celsius.symbol())"
+        self.humidityLabel.text = "현재습도: \(weatherInfo.currentHumidity)\(TemperatureUnit.humidity.symbol())"
     }
 }

@@ -29,16 +29,15 @@ class DetailViewController: UIViewController {
         guard let weatherInfo = self.weatherInfo else {
             return
         }
-        
         self.cityNameLabel.text = weatherInfo.cityName
         self.iconImageView.loadImage(iconCode: weatherInfo.iconCode)
         self.discriptionLabel.text = weatherInfo.description
-        self.currentTemperatureLabel.text = "\(weatherInfo.currentTemperatures)"
-        self.feelsTemperatureLabel.text = "\(weatherInfo.feelsTemperatures)"
-        self.minTemperatureLabel.text = "\(weatherInfo.minimumTemperatures)"
-        self.maxTemperatureLabel.text = "\(weatherInfo.maximumTemperatures)"
-        self.humidityLabel.text = "\(weatherInfo.currentHumidity)"
-        self.windSpeedLabel.text = "\(weatherInfo.windSpeed)"
-        self.pressureLabel.text = "\(weatherInfo.pressure)"
+        self.currentTemperatureLabel.text = "\(weatherInfo.currentTemperatures)\(TemperatureUnit.celsius.symbol())"
+        self.feelsTemperatureLabel.text = "\(weatherInfo.feelsTemperatures)\(TemperatureUnit.celsius.symbol())"
+        self.minTemperatureLabel.text = "\(weatherInfo.minimumTemperatures)\(TemperatureUnit.celsius.symbol())"
+        self.maxTemperatureLabel.text = "\(weatherInfo.maximumTemperatures)\(TemperatureUnit.celsius.symbol())"
+        self.humidityLabel.text = "\(weatherInfo.currentHumidity)\(TemperatureUnit.humidity.symbol())"
+        self.windSpeedLabel.text = "\(weatherInfo.windSpeed)\(TemperatureUnit.windSpeed.symbol())"
+        self.pressureLabel.text = "\(weatherInfo.pressure)\(TemperatureUnit.pressure.symbol())"
     }
 }
