@@ -8,12 +8,12 @@
 import Foundation
 
 struct WeatherInfoRequest: APIRequest {
-    typealias ResponseType = WeatherInfo
+    typealias ResponseType = WeatherRawData
         
     let cityGeoInfo: GeoInfo
  
     var url: URL? {
-        URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(cityGeoInfo.latitude)&lon=\(cityGeoInfo.longitude)&appid=\(Bundle.main.openWeatherAPIKey)")
+        URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(cityGeoInfo.latitude)&lon=\(cityGeoInfo.longitude)&appid=\(Bundle.main.openWeatherAPIKey)&units=metric&lang=kr")
     }
     
     var urlRequest: URLRequest? {

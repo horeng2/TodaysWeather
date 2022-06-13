@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct WeatherCondition: Decodable {
+struct WeatherDetail: Decodable {
     let currentTemperatures: Double
-    let sensibleTemperatures: Double
+    let feelsTemperatures: Double
     let currentHumidity: Double
     let minimumTemperatures: Double
     let maximumTemperatures: Double
@@ -17,7 +17,7 @@ struct WeatherCondition: Decodable {
     
     private enum CodingKeys: String, CodingKey {
         case currentTemperatures = "temp"
-        case sensibleTemperatures = "feels_like"
+        case feelsTemperatures = "feels_like"
         case currentHumidity = "humidity"
         case minimumTemperatures = "temp_min"
         case maximumTemperatures = "temp_max"

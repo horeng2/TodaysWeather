@@ -11,12 +11,12 @@ class GeoInfoService {
     let geoRepository = GeoInfoRepository()
     
     func decodeGeoInfo(of city: City, completionHandler: @escaping (GeoInfo) -> Void) {
-        self.geoRepository.loadGeoData(of: city) { geoData in
-            guard let decodedGeoInfo = try? JSONDecoder().decode([GeoInfo].self, from: geoData).first else {
+        self.geoRepository.loadGeoData(of: city) { geoRawData in
+            guard let decodedGeoData = try? JSONDecoder().decode([GeoInfo].self, from: geoRawData).first else {
                 print("GeoInfo \(NetworkError.parsingError)")
                 return
             }
-            completionHandler(decodedGeoInfo)
+            completionHandler(decodedGeoData)
             return
         }
     }
