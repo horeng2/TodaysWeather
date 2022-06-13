@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2Cm-QA-YOC"; */
+"2Cm-QA-YOC.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9xk-13-hCM"; */
+"9xk-13-hCM.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "AOd-Gp-dMh"; */
+"AOd-Gp-dMh.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CKP-05-juD"; */
+"CKP-05-juD.text" = "Label";
+
+/* Class = "UILabel"; text = "최저 온도"; ObjectID = "DcW-Rb-0jJ"; */
+"DcW-Rb-0jJ.text" = "Minimun";
+
+/* Class = "UILabel"; text = "기압"; ObjectID = "Feq-Gf-B87"; */
+"Feq-Gf-B87.text" = "Pressure";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Fjm-lc-uL0"; */
+"Fjm-lc-uL0.text" = "Label";
+
+/* Class = "UILabel"; text = "앗! 로딩중!"; ObjectID = "Hky-pH-ZTJ"; */
+"Hky-pH-ZTJ.text" = "I'm Loading...";
+
+/* Class = "UILabel"; text = "습도"; ObjectID = "JH1-Aw-05B"; */
+"JH1-Aw-05B.text" = "Humidity";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Lnm-WU-1Ps"; */
+"Lnm-WU-1Ps.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "RnV-23-vG6"; */
+"RnV-23-vG6.text" = "Label";
+
+/* Class = "UILabel"; text = "최고 온도"; ObjectID = "TlJ-Cn-EYA"; */
+"TlJ-Cn-EYA.text" = "Maximun";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ekT-hl-mNW"; */
+"ekT-hl-mNW.text" = "Label";
+
+/* Class = "UILabel"; text = "체감 온도"; ObjectID = "jRN-Oz-45y"; */
+"jRN-Oz-45y.text" = "Feeling";
+
+/* Class = "UILabel"; text = "현재 온도"; ObjectID = "mks-xw-IVT"; */
+"mks-xw-IVT.text" = "Current";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oFJ-g0-dmq"; */
+"oFJ-g0-dmq.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "p8l-fI-MlS"; */
+"p8l-fI-MlS.text" = "Label";
+
+/* Class = "UILabel"; text = "풍속"; ObjectID = "rfG-VC-Pxm"; */
+"rfG-VC-Pxm.text" = "WindSpeed";
+
+/* Class = "UINavigationItem"; title = "오늘의 날씨"; ObjectID = "sdl-VQ-bfa"; */
+"sdl-VQ-bfa.title" = "Today's weather";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tcR-S1-N3N"; */
+"tcR-S1-N3N.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "z1h-WN-CTY"; */
+"z1h-WN-CTY.text" = "Label";

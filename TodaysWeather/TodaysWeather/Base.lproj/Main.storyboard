@@ -11,7 +11,7 @@
         <!--오늘의 날씨-->
         <scene sceneID="zv0-6i-Zpt">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="lyq-Dg-4DU" customClass="ListViewController" customModule="TodaysWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="overFullScreen" id="lyq-Dg-4DU" customClass="ListViewController" customModule="TodaysWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eEP-9q-xXx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,17 +51,17 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="75Q-tB-LTZ" userLabel="Weather Info Stack View">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="75Q-tB-LTZ" userLabel="Weather Info Stack View">
                                                             <rect key="frame" x="239" y="0.0" width="175" height="70.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2m-Sj-dJK" userLabel="Temp Lable">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="37.5" height="35.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1h-WN-CTY" userLabel="Temp Lable">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="35.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LW0-9F-w3l" userLabel="Humidity Lable">
-                                                                    <rect key="frame" x="0.0" y="35.5" width="37.5" height="35"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekT-hl-mNW" userLabel="Humidity Lable">
+                                                                    <rect key="frame" x="0.0" y="35.5" width="175" height="35"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -85,9 +85,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="HumidityLabel" destination="LW0-9F-w3l" id="nlY-Fb-M6c"/>
                                             <outlet property="cityNameLabel" destination="2Cm-QA-YOC" id="WHW-EU-yHP"/>
-                                            <outlet property="temperatureLable" destination="N2m-Sj-dJK" id="yBt-My-O1G"/>
+                                            <outlet property="humidityLabel" destination="ekT-hl-mNW" id="4Sl-yQ-5Fi"/>
+                                            <outlet property="temperatureLabel" destination="z1h-WN-CTY" id="d5D-Q6-ay8"/>
                                             <outlet property="totalInfoStackView" destination="pub-bH-mwh" id="BdF-Mt-Bf1"/>
                                             <outlet property="weatherIconImageView" destination="XOR-aO-WMT" id="Sdn-S8-iBV"/>
                                             <outlet property="weatherInfoStackView" destination="75Q-tB-LTZ" id="el4-ad-HQm"/>
@@ -108,7 +108,7 @@
                     <navigationItem key="navigationItem" title="오늘의 날씨" id="sdl-VQ-bfa"/>
                     <connections>
                         <outlet property="listTableView" destination="TZI-p2-Bi0" id="6lb-Na-hVh"/>
-                        <segue destination="HIa-PU-Dug" kind="presentation" identifier="showDetail" id="zCQ-l3-Vde"/>
+                        <segue destination="HIa-PU-Dug" kind="show" identifier="showDetail" id="zCQ-l3-Vde"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11A-6V-Nkt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -120,11 +120,11 @@
             <objects>
                 <viewController id="HIa-PU-Dug" customClass="DetailViewController" customModule="TodaysWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YtQ-PM-ueD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpL-lH-Bom">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hlR-Ei-oEB">
                                         <rect key="frame" x="20" y="30" width="394" height="631"/>

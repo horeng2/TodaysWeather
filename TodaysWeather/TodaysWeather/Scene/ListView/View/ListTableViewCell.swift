@@ -12,13 +12,13 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var weatherIconImageView: UIImageView!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var weatherInfoStackView: UIStackView!
-    @IBOutlet weak var temperatureLable: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     
     func configure(weatherInfo: WeatherInformation) {
         self.weatherIconImageView.loadImage(iconCode: weatherInfo.iconCode)
         self.cityNameLabel.text = weatherInfo.cityName
-        self.temperatureLable.text = "현재기온: \(weatherInfo.currentTemperatures)\(TemperatureUnit.celsius.symbol())"
-        self.humidityLabel.text = "현재습도: \(weatherInfo.currentHumidity)\(TemperatureUnit.humidity.symbol())"
+        self.temperatureLabel.text = "☀️ \(weatherInfo.currentTemperatures)\(TemperatureUnit.celsius.symbol())"
+        self.humidityLabel.text = "💧 \(weatherInfo.currentHumidity)\(TemperatureUnit.humidity.symbol())"
     }
 }
