@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GeoInfoService {
+class GeoInfoUseCase {
     private let geoRepository = GeoInfoRepository()
     
     func decodeGeoInfo(

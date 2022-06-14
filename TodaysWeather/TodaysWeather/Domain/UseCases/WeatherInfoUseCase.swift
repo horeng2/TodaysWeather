@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeatherInfoService {
+class WeatherInfoUseCase {
     private let weatherInfoRepository = WeatherInfoRepository()
     
     func loadWeatherInfomation(
@@ -72,7 +72,6 @@ class WeatherInfoService {
                 return WeatherType.unknown
             }
         }()
-        
         return weatherType.description()
     }
 }

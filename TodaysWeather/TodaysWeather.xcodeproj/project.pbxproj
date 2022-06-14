@@ -23,8 +23,8 @@
 		48AFD37E2853C87700AF543F /* SecretKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48AFD3552853C87700AF543F /* SecretKey.plist */; };
 		48AFD37F2853C87700AF543F /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3582853C87700AF543F /* APIProvider.swift */; };
 		48AFD3802853C87700AF543F /* WeatherRawData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD35B2853C87700AF543F /* WeatherRawData.swift */; };
-		48AFD3812853C87700AF543F /* WeatherInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD35C2853C87700AF543F /* WeatherInfoService.swift */; };
-		48AFD3822853C87700AF543F /* GeoInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD35D2853C87700AF543F /* GeoInfoService.swift */; };
+		48AFD3812853C87700AF543F /* WeatherInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD35C2853C87700AF543F /* WeatherInfoUseCase.swift */; };
+		48AFD3822853C87700AF543F /* GeoInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD35D2853C87700AF543F /* GeoInfoUseCase.swift */; };
 		48AFD3832853C87700AF543F /* APIRequest+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3602853C87700AF543F /* APIRequest+Protocol.swift */; };
 		48AFD3842853C87700AF543F /* WeatherInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3612853C87700AF543F /* WeatherInfoRequest.swift */; };
 		48AFD3852853C87700AF543F /* GeoInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFD3622853C87700AF543F /* GeoInfoRequest.swift */; };
@@ -66,8 +66,8 @@
 		48AFD3552853C87700AF543F /* SecretKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SecretKey.plist; sourceTree = "<group>"; };
 		48AFD3582853C87700AF543F /* APIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		48AFD35B2853C87700AF543F /* WeatherRawData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRawData.swift; sourceTree = "<group>"; };
-		48AFD35C2853C87700AF543F /* WeatherInfoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInfoService.swift; sourceTree = "<group>"; };
-		48AFD35D2853C87700AF543F /* GeoInfoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoInfoService.swift; sourceTree = "<group>"; };
+		48AFD35C2853C87700AF543F /* WeatherInfoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInfoUseCase.swift; sourceTree = "<group>"; };
+		48AFD35D2853C87700AF543F /* GeoInfoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoInfoUseCase.swift; sourceTree = "<group>"; };
 		48AFD3602853C87700AF543F /* APIRequest+Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIRequest+Protocol.swift"; sourceTree = "<group>"; };
 		48AFD3612853C87700AF543F /* WeatherInfoRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInfoRequest.swift; sourceTree = "<group>"; };
 		48AFD3622853C87700AF543F /* GeoInfoRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoInfoRequest.swift; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 		4886ECBA2858936300E03EA5 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				48AFD35C2853C87700AF543F /* WeatherInfoService.swift */,
-				48AFD35D2853C87700AF543F /* GeoInfoService.swift */,
+				48AFD35C2853C87700AF543F /* WeatherInfoUseCase.swift */,
+				48AFD35D2853C87700AF543F /* GeoInfoUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -141,9 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				48AFD3582853C87700AF543F /* APIProvider.swift */,
-				48AFD3632853C87700AF543F /* Error */,
 				48AFD35E2853C87700AF543F /* Request */,
 				48AFD35A2853C87700AF543F /* Response */,
+				48AFD3632853C87700AF543F /* Error */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -358,7 +358,7 @@
 				48A3C8CA285656D800BDA75E /* DetailViewController.swift in Sources */,
 				48AFD3902853C87700AF543F /* City.swift in Sources */,
 				48A3C8D32857268800BDA75E /* Double+Extension.swift in Sources */,
-				48AFD3822853C87700AF543F /* GeoInfoService.swift in Sources */,
+				48AFD3822853C87700AF543F /* GeoInfoUseCase.swift in Sources */,
 				48AFD37C2853C87700AF543F /* WeatherInfoRepository.swift in Sources */,
 				48AFD37F2853C87700AF543F /* APIProvider.swift in Sources */,
 				48AFD3922853C87700AF543F /* GeoInfo.swift in Sources */,
@@ -366,7 +366,7 @@
 				48AFD37B2853C87700AF543F /* GeoInfoRepository.swift in Sources */,
 				48A3C8D828572F5800BDA75E /* TemperatureUnit.swift in Sources */,
 				48AFD3802853C87700AF543F /* WeatherRawData.swift in Sources */,
-				48AFD3812853C87700AF543F /* WeatherInfoService.swift in Sources */,
+				48AFD3812853C87700AF543F /* WeatherInfoUseCase.swift in Sources */,
 				48AFD3AD285613C400AF543F /* ListTableViewCell.swift in Sources */,
 				48AFD38E2853C87700AF543F /* WeatherDetail.swift in Sources */,
 				48AFD3842853C87700AF543F /* WeatherInfoRequest.swift in Sources */,

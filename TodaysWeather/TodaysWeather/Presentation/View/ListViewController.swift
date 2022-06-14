@@ -10,13 +10,13 @@ import UIKit
 class ListViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     private let weatherListViewModel = WeatherListViewModel()
-    private var weather = [WeatherInformation]()
+    private var listTableViewDataSource = [WeatherInformation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
         self.weatherListViewModel.allWeatherInfoUpdated = {
-            self.weather = self.weatherListViewModel.allWeatherInfo
+            self.listTableViewDataSource = self.weatherListViewModel.allWeatherInfo
             DispatchQueue.main.async {
                 self.listTableView.reloadData()
             }
@@ -46,7 +46,7 @@ class ListViewController: UIViewController {
         if segue.identifier == "showDetail" {
             let nextViewController = segue.destination as? DetailViewController
             if let index = sender as? Int{
-                nextViewController?.weatherInfo = weather[index]
+                nextViewController?.weatherInfo = listTableViewDataSource[index]
             }
         }
     }
@@ -61,7 +61,7 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if weather.isEmpty {
+        if listTableViewDataSource.isEmpty {
             tableView.isHidden = true
             return UITableViewCell()
         }
@@ -70,7 +70,7 @@ extension ListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as? ListTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(weatherInfo: weather[indexPath.row])
+        cell.configure(weatherInfo: listTableViewDataSource[indexPath.row])
         
         return cell
     }
@@ -95,7 +95,6 @@ extension ListViewController: UITableViewDelegate {
     ) {
         let cellBackgroundView = UIView()
         cellBackgroundView.backgroundColor = .clear
-        
         cell.selectedBackgroundView = cellBackgroundView
         cell.backgroundColor = UIColor.clear
     }

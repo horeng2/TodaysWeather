@@ -8,8 +8,8 @@
 import Foundation
 
 class WeatherListViewModel {
-    private let weatherInfoService = WeatherInfoService()
-    private let geoInfoService = GeoInfoService()
+    private let weatherInfoService = WeatherInfoUseCase()
+    private let geoInfoService = GeoInfoUseCase()
     var allWeatherInfoUpdated: () -> Void = {}
     var allWeatherInfo: [WeatherInformation] = [] {
         didSet {
