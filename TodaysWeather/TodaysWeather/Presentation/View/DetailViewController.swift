@@ -38,8 +38,12 @@ class DetailViewController: UIViewController {
         guard let weatherInfo = self.weatherInfo else {
             return
         }
+        ImageCacheManager.shared.loadImage(url: ImageURL.icon.url(key: weatherInfo.iconCode)) { image in
+            DispatchQueue.main.async {
+                self.iconImageView.image = image
+            }
+        }
         self.cityNameLabel.text = weatherInfo.cityName
-        self.iconImageView.loadImage(iconCode: weatherInfo.iconCode)
         self.discriptionLabel.text = weatherInfo.description
         self.currentTemperatureLabel.text = "\(weatherInfo.currentTemperatures)\(TemperatureUnit.celsius.symbol())"
         self.feelsTemperatureLabel.text = "\(weatherInfo.feelsTemperatures)\(TemperatureUnit.celsius.symbol())"
