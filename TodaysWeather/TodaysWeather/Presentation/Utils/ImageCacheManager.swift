@@ -29,19 +29,18 @@ class ImageCacheManager {
         guard let imageURL = URL(string: url) else {
             return
         }
-
+        if let cachedImage = self.loadCacheData(for: url) {
+            completionHandler(cachedImage)
+            return
+        }
         let task = URLSession.shared.dataTask(with: imageURL) { data, _, _ in
             guard let data = data else {
                 completionHandler(nil)
                 return
             }
-            if let cachedImage = self.loadCacheData(for: url) {
-                completionHandler(cachedImage)
-            } else {
-                let newImage = UIImage(data: data)
-                self.saveCacheData(of: newImage ?? UIImage(), for: url)
-                completionHandler(newImage)
-            }
+            let newImage = UIImage(data: data)
+            self.saveCacheData(of: newImage ?? UIImage(), for: url)
+            completionHandler(newImage)
         }
         task.resume()
     }
