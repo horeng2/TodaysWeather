@@ -29,7 +29,7 @@ enum City: CaseIterable, Decodable {
     case Cheongju
     case Chuncheon
     
-    func name() -> String{
+    func localizedName() -> String{
         return "\(self)".localized
     }
 }

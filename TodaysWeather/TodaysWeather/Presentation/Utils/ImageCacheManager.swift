@@ -12,17 +12,20 @@ class ImageCacheManager {
     private let cache = NSCache<NSString, UIImage>()
     static let shared = ImageCacheManager()
     
-    func loadCacheData(for key: String) -> UIImage? {
+    private func loadCacheData(for key: String) -> UIImage? {
         let url = NSString(string: key)
         return self.cache.object(forKey: url as NSString )
     }
     
-    func saveCacheData(of image: UIImage, for key: String) {
+    private func saveCacheData(of image: UIImage, for key: String) {
         let url = NSString(string: key)
         self.cache.setObject(image, forKey: url)
     }
     
-    func loadImage(url: String, completionHandler: @escaping (UIImage?) -> Void) {
+    func loadImage(
+        url: String,
+        completionHandler: @escaping (UIImage?) -> Void
+    ) {
         guard let imageURL = URL(string: url) else {
             return
         }

@@ -10,9 +10,12 @@ import Foundation
 class GeoInfoRepository {
     typealias ResponseType = GeoInfo
 
-    let apiProvider = APIProvider()
+    private let apiProvider = APIProvider()
         
-    func loadGeoData(of city: City, completionHandler: @escaping (Data) -> Void) {
+    func loadGeoData(
+        of city: City,
+        completionHandler: @escaping (Data) -> Void
+    ) {
         apiProvider.request(requestType: GeoInfoRequest(city: city)) { (result: Result<Data, NetworkError>) in
             switch result {
             case .success(let data):

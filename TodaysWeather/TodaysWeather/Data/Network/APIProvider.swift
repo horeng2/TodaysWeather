@@ -8,7 +8,8 @@
 import Foundation
 
 class APIProvider {
-    let session: URLSession
+    private let session: URLSession
+    
     init(session: URLSession = URLSession.shared) {
         self.session = session
     }
@@ -20,13 +21,11 @@ class APIProvider {
         guard let request = requestType.urlRequest else {
             return
         }
-        
         let task = self.session.dataTask(with: request) { data, urlResponse, error in
             guard let httpResponse = urlResponse as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                       return completionHandler(.failure(.responseError))
             }
-            
             guard let data = data else {
                 return completionHandler(.failure(.invaildData))
             }

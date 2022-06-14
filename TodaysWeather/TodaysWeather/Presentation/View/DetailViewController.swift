@@ -31,30 +31,13 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.configureStyle()
         self.configureWeaterInfo()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "nightSky")!)
-    }
-    
-    func configureWeaterInfo() {
-        guard let weatherInfo = self.weatherInfo else {
+        guard let viewBackgroundImage = UIImage(named: "nightSky") else {
             return
         }
-        ImageCacheManager.shared.loadImage(url: ImageURL.icon.url(key: weatherInfo.iconCode)) { image in
-            DispatchQueue.main.async {
-                self.iconImageView.image = image
-            }
-        }
-        self.cityNameLabel.text = weatherInfo.cityName
-        self.discriptionLabel.text = weatherInfo.description
-        self.currentTemperatureLabel.text = "\(weatherInfo.currentTemperatures)\(TemperatureUnit.celsius.symbol())"
-        self.feelsTemperatureLabel.text = "\(weatherInfo.feelsTemperatures)\(TemperatureUnit.celsius.symbol())"
-        self.minTemperatureLabel.text = "\(weatherInfo.minimumTemperatures)\(TemperatureUnit.celsius.symbol())"
-        self.maxTemperatureLabel.text = "\(weatherInfo.maximumTemperatures)\(TemperatureUnit.celsius.symbol())"
-        self.humidityLabel.text = "\(weatherInfo.currentHumidity)\(TemperatureUnit.humidity.symbol())"
-        self.windSpeedLabel.text = "\(weatherInfo.windSpeed)\(TemperatureUnit.windSpeed.symbol())"
-        self.pressureLabel.text = "\(weatherInfo.pressure)\(TemperatureUnit.pressure.symbol())"
+        self.view.backgroundColor = UIColor(patternImage: viewBackgroundImage)
     }
     
-    func configureStyle() {
+    private func configureStyle() {
         self.navigationController?.navigationBar.tintColor = .white
         self.cityNameLabel.textColor = .white
         self.discriptionLabel.textColor = .white
@@ -90,4 +73,28 @@ class DetailViewController: UIViewController {
         self.pressureTitleLabel.font = UIFont.systemFont(ofSize: 20)
         self.pressureLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
     }
+    
+    private func configureWeaterInfo() {
+        guard let weatherInfo = self.weatherInfo else {
+            return
+        }
+        self.cityNameLabel.text = weatherInfo.cityName
+        self.discriptionLabel.text = weatherInfo.description
+        self.currentTemperatureLabel.text = "\(weatherInfo.currentTemperatures)\(TemperatureUnit.celsius.symbol())"
+        self.feelsTemperatureLabel.text = "\(weatherInfo.feelsTemperatures)\(TemperatureUnit.celsius.symbol())"
+        self.minTemperatureLabel.text = "\(weatherInfo.minimumTemperatures)\(TemperatureUnit.celsius.symbol())"
+        self.maxTemperatureLabel.text = "\(weatherInfo.maximumTemperatures)\(TemperatureUnit.celsius.symbol())"
+        self.humidityLabel.text = "\(weatherInfo.currentHumidity)\(TemperatureUnit.humidity.symbol())"
+        self.windSpeedLabel.text = "\(weatherInfo.windSpeed)\(TemperatureUnit.windSpeed.symbol())"
+        self.pressureLabel.text = "\(weatherInfo.pressure)\(TemperatureUnit.pressure.symbol())"
+        
+        let iconCode = weatherInfo.iconCode
+        ImageCacheManager.shared.loadImage(url: ImageURL.icon.url(key: iconCode)) { image in
+            DispatchQueue.main.async {
+                self.iconImageView.image = image
+            }
+        }
+    }
+    
+  
 }

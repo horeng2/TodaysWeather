@@ -16,13 +16,15 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var humidityLabel: UILabel!
     
     func configure(weatherInfo: WeatherInformation) {
-        ImageCacheManager.shared.loadImage(url: ImageURL.icon.url(key: weatherInfo.iconCode)) { image in
+        self.cityNameLabel.text = weatherInfo.cityName
+        self.temperatureLabel.text = "☀️ \(weatherInfo.currentTemperatures)\(TemperatureUnit.celsius.symbol())"
+        self.humidityLabel.text = "💧 \(weatherInfo.currentHumidity)\(TemperatureUnit.humidity.symbol())"
+        
+        let iconCode = weatherInfo.iconCode
+        ImageCacheManager.shared.loadImage(url: ImageURL.icon.url(key: iconCode)) { image in
             DispatchQueue.main.async {
                 self.weatherIconImageView.image = image
             }
         }
-        self.cityNameLabel.text = weatherInfo.cityName
-        self.temperatureLabel.text = "☀️ \(weatherInfo.currentTemperatures)\(TemperatureUnit.celsius.symbol())"
-        self.humidityLabel.text = "💧 \(weatherInfo.currentHumidity)\(TemperatureUnit.humidity.symbol())"
     }
 }

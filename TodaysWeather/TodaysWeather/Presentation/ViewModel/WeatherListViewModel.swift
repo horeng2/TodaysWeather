@@ -8,8 +8,8 @@
 import Foundation
 
 class WeatherListViewModel {
-    let weatherInfoService = WeatherInfoService()
-    let geoInfoService = GeoInfoService()
+    private let weatherInfoService = WeatherInfoService()
+    private let geoInfoService = GeoInfoService()
     var allWeatherInfoUpdated: () -> Void = {}
     var allWeatherInfo: [WeatherInformation] = [] {
         didSet {
@@ -27,13 +27,16 @@ class WeatherListViewModel {
         City.allCases.forEach { city in
             fetchWeatherInfo(of: city) { weatherInfo in
                 var weatherInfoKR = weatherInfo
-                weatherInfoKR.cityName = city.name()
+                weatherInfoKR.cityName = city.localizedName()
                 self.allWeatherInfo.append(weatherInfoKR)
             }
         }
     }
     
-    func fetchWeatherInfo(of city: City, completionHandler: @escaping (WeatherInformation) -> Void) {
+    private func fetchWeatherInfo(
+        of city: City,
+        completionHandler: @escaping (WeatherInformation) -> Void
+    ) {
         self.geoInfoService.decodeGeoInfo(of: city) { geoInfo in
             self.weatherInfoService.loadWeatherInfomation(at: geoInfo) { weatherInfo in
                 completionHandler(weatherInfo)

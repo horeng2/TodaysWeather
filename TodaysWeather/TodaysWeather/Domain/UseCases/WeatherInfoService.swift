@@ -8,9 +8,12 @@
 import Foundation
 
 class WeatherInfoService {
-    let weatherInfoRepository = WeatherInfoRepository()
+    private let weatherInfoRepository = WeatherInfoRepository()
     
-    func loadWeatherInfomation(at geoInfo: GeoInfo, completionHandler: @escaping (WeatherInformation) -> Void) {
+    func loadWeatherInfomation(
+        at geoInfo: GeoInfo,
+        completionHandler: @escaping (WeatherInformation) -> Void
+    ) {
         self.decodeWeatherInfo(at: geoInfo) { weatherRawData in
             guard let basicInfo = weatherRawData.basicsInfo.first else {
                 return
@@ -32,7 +35,10 @@ class WeatherInfoService {
         }
     }
     
-    func decodeWeatherInfo(at geoInfo: GeoInfo, completionHandler: @escaping (WeatherRawData) -> Void) {
+    private func decodeWeatherInfo(
+        at geoInfo: GeoInfo,
+        completionHandler: @escaping (WeatherRawData) -> Void
+    ) {
         self.weatherInfoRepository.loadWeatherData(by: geoInfo) { weatherRawData in
             guard let decodedWeatherData = try? JSONDecoder().decode(WeatherRawData.self, from: weatherRawData) else {
                 print("WeatherInfo \(NetworkError.parsingError)")
@@ -42,7 +48,9 @@ class WeatherInfoService {
         }
     }
     
-    func convertDescription(from weatherID: Int) -> String {
+    private func convertDescription(
+        from weatherID: Int
+    ) -> String {
         let rain = (200...599)
         let snow = (600...699)
         let overcast = (700...799)

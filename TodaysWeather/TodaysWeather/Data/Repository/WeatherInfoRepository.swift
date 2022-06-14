@@ -10,9 +10,12 @@ import Foundation
 class WeatherInfoRepository {
     typealias ResponseType = WeatherRawData
     
-    let apiProvider = APIProvider()
+    private let apiProvider = APIProvider()
     
-    func loadWeatherData(by cityGeoInfo: GeoInfo, completionHandler: @escaping (Data) -> Void) {
+    func loadWeatherData(
+        by cityGeoInfo: GeoInfo,
+        completionHandler: @escaping (Data) -> Void
+    ) {
         apiProvider.request(requestType: WeatherInfoRequest(cityGeoInfo: cityGeoInfo)) { (result: Result<Data, NetworkError>) in
             switch result {
             case .success(let data):

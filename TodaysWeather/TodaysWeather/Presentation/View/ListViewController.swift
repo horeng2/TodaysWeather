@@ -9,8 +9,8 @@ import UIKit
 
 class ListViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
-    let weatherListViewModel = WeatherListViewModel()
-    var weather = [WeatherInformation]()
+    private let weatherListViewModel = WeatherListViewModel()
+    private var weather = [WeatherInformation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,13 @@ class ListViewController: UIViewController {
         self.weatherListViewModel.fetchAllWeatherInfo()
     }
     
+    private func configureTableView() {
+        self.listTableView.dataSource = self
+        self.listTableView.delegate = self
+        let tableViewBackgroundImage = UIImage(named: "sky")
+        self.listTableView.backgroundView = UIImageView(image: tableViewBackgroundImage)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
@@ -32,24 +39,24 @@ class ListViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    func configureTableView() {
-        self.listTableView.dataSource = self
-        self.listTableView.delegate = self
-        self.listTableView.backgroundView = UIImageView(image: UIImage(named: "sky"))
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(
+        for segue: UIStoryboardSegue,
+        sender: Any?
+    ) {
         if segue.identifier == "showDetail" {
-            let vc = segue.destination as? DetailViewController
+            let nextViewController = segue.destination as? DetailViewController
             if let index = sender as? Int{
-                vc?.weatherInfo = weather[index]
+                nextViewController?.weatherInfo = weather[index]
             }
         }
     }
 }
 
 extension ListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         return City.allCases.count
     }
     
@@ -59,6 +66,7 @@ extension ListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         tableView.isHidden = false
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as? ListTableViewCell else {
             return UITableViewCell()
         }
@@ -73,11 +81,18 @@ extension ListViewController: UITableViewDataSource {
 }
 
 extension ListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(
+        _ tableView: UITableView,
+        heightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
         return 70
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(
+        _ tableView: UITableView,
+        willDisplay cell: UITableViewCell,
+        forRowAt indexPath: IndexPath
+    ) {
         let cellBackgroundView = UIView()
         cellBackgroundView.backgroundColor = .clear
         
