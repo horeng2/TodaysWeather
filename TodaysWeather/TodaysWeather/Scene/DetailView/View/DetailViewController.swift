@@ -22,11 +22,11 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+        configureWeaterInfo()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "nightSky")!)
     }
     
-    func configure() {
+    func configureWeaterInfo() {
         guard let weatherInfo = self.weatherInfo else {
             return
         }
@@ -40,5 +40,9 @@ class DetailViewController: UIViewController {
         self.humidityLabel.text = "\(weatherInfo.currentHumidity)\(TemperatureUnit.humidity.symbol())"
         self.windSpeedLabel.text = "\(weatherInfo.windSpeed)\(TemperatureUnit.windSpeed.symbol())"
         self.pressureLabel.text = "\(weatherInfo.pressure)\(TemperatureUnit.pressure.symbol())"
+    }
+    
+    func configureStyle() {
+        
     }
 }
