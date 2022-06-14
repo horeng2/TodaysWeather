@@ -97,20 +97,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		48A3C8CB285656DD00BDA75E /* DetailView */ = {
+		4886ECB92858934B00E03EA5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				48A3C8CC285656F000BDA75E /* View */,
+				48A3C8D02856E2DF00BDA75E /* UIImageView+Extension.swift */,
+				48A3C8D22857268800BDA75E /* Double+Extension.swift */,
 			);
-			path = DetailView;
+			path = Utils;
 			sourceTree = "<group>";
 		};
-		48A3C8CC285656F000BDA75E /* View */ = {
+		4886ECBA2858936300E03EA5 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				48A3C8C9285656D800BDA75E /* DetailViewController.swift */,
+				48AFD35C2853C87700AF543F /* WeatherInfoService.swift */,
+				48AFD35D2853C87700AF543F /* GeoInfoService.swift */,
 			);
-			path = View;
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		4886ECBC285893DA00E03EA5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				48AFD3512853C87700AF543F /* Repository */,
+				4886ECBF2858961900E03EA5 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4886ECBD2858949C00E03EA5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				48AFD3682853C87700AF543F /* Main.storyboard */,
+				48AFD36A2853C87700AF543F /* AppDelegate.swift */,
+				48AFD37A2853C87700AF543F /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4886ECBF2858961900E03EA5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				48AFD3582853C87700AF543F /* APIProvider.swift */,
+				48AFD3632853C87700AF543F /* Error */,
+				48AFD35E2853C87700AF543F /* Request */,
+				48AFD35A2853C87700AF543F /* Response */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		48A3C8D628572EB100BDA75E /* Model */ = {
@@ -122,30 +154,28 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		48A3C8EB2857681100BDA75E /* Localization */ = {
+		48A3C8EB2857681100BDA75E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				48A3C8E92857680800BDA75E /* String+Extension.swift */,
+				48AFD3652853C87700AF543F /* Assets.xcassets */,
+				48AFD3552853C87700AF543F /* SecretKey.plist */,
+				48AFD3662853C87700AF543F /* LaunchScreen.storyboard */,
 				48A3C8EE285769FC00BDA75E /* Localizable.strings */,
+				48A3C8E92857680800BDA75E /* String+Extension.swift */,
 			);
-			path = Localization;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		48AFD3502853C87700AF543F /* TodaysWeather */ = {
 			isa = PBXGroup;
 			children = (
-				48A3C8EB2857681100BDA75E /* Localization */,
-				48AFD3652853C87700AF543F /* Assets.xcassets */,
-				48AFD3662853C87700AF543F /* LaunchScreen.storyboard */,
-				48AFD3682853C87700AF543F /* Main.storyboard */,
-				48AFD36A2853C87700AF543F /* AppDelegate.swift */,
-				48AFD37A2853C87700AF543F /* SceneDelegate.swift */,
-				48AFD3552853C87700AF543F /* SecretKey.plist */,
 				48AFD3792853C87700AF543F /* Info.plist */,
+				4886ECBD2858949C00E03EA5 /* Application */,
 				48AFD3542853C87700AF543F /* APIKeyBundle.swift */,
-				48AFD36B2853C87700AF543F /* Scene */,
+				48AFD36B2853C87700AF543F /* Presentation */,
 				48AFD3712853C87700AF543F /* Domain */,
-				48AFD3562853C87700AF543F /* Network */,
+				4886ECBC285893DA00E03EA5 /* Data */,
+				48A3C8EB2857681100BDA75E /* Resources */,
 			);
 			path = TodaysWeather;
 			sourceTree = "<group>";
@@ -159,36 +189,6 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		48AFD3562853C87700AF543F /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				48AFD3572853C87700AF543F /* Provider */,
-				48AFD3592853C87700AF543F /* Service */,
-				48AFD3512853C87700AF543F /* Repository */,
-				48AFD3632853C87700AF543F /* Error */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		48AFD3572853C87700AF543F /* Provider */ = {
-			isa = PBXGroup;
-			children = (
-				48AFD3582853C87700AF543F /* APIProvider.swift */,
-			);
-			path = Provider;
-			sourceTree = "<group>";
-		};
-		48AFD3592853C87700AF543F /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				48AFD35A2853C87700AF543F /* Response */,
-				48AFD35C2853C87700AF543F /* WeatherInfoService.swift */,
-				48AFD35D2853C87700AF543F /* GeoInfoService.swift */,
-				48AFD35E2853C87700AF543F /* Request */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		48AFD35A2853C87700AF543F /* Response */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,19 +200,11 @@
 		48AFD35E2853C87700AF543F /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				48AFD35F2853C87700AF543F /* Protocol */,
+				48AFD3602853C87700AF543F /* APIRequest.swift */,
 				48AFD3612853C87700AF543F /* WeatherInfoRequest.swift */,
 				48AFD3622853C87700AF543F /* GeoInfoRequest.swift */,
 			);
 			path = Request;
-			sourceTree = "<group>";
-		};
-		48AFD35F2853C87700AF543F /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				48AFD3602853C87700AF543F /* APIRequest.swift */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		48AFD3632853C87700AF543F /* Error */ = {
@@ -223,25 +215,15 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		48AFD36B2853C87700AF543F /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				48A3C8D02856E2DF00BDA75E /* UIImageView+Extension.swift */,
-				48A3C8D22857268800BDA75E /* Double+Extension.swift */,
-				48A3C8D628572EB100BDA75E /* Model */,
-				48AFD36C2853C87700AF543F /* ListView */,
-				48A3C8CB285656DD00BDA75E /* DetailView */,
-			);
-			path = Scene;
-			sourceTree = "<group>";
-		};
-		48AFD36C2853C87700AF543F /* ListView */ = {
+		48AFD36B2853C87700AF543F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				48AFD36F2853C87700AF543F /* View */,
 				48AFD36D2853C87700AF543F /* ViewModel */,
+				4886ECB92858934B00E03EA5 /* Utils */,
+				48A3C8D628572EB100BDA75E /* Model */,
 			);
-			path = ListView;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		48AFD36D2853C87700AF543F /* ViewModel */ = {
@@ -256,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				48AFD3AA2853F3D300AF543F /* ListViewController.swift */,
+				48A3C8C9285656D800BDA75E /* DetailViewController.swift */,
 				48AFD3AC285613C400AF543F /* ListTableViewCell.swift */,
 			);
 			path = View;
@@ -265,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				48AFD3722853C87700AF543F /* Model */,
+				4886ECBA2858936300E03EA5 /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
