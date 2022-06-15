@@ -8,7 +8,7 @@
 import Foundation
 
 class WeatherInfoRepository {
-    typealias ResponseType = WeatherRawData
+    typealias ResponseType = WeatherData
     
     private let apiProvider = APIProvider()
     

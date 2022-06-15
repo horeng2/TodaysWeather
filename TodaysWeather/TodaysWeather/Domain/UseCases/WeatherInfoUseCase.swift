@@ -37,10 +37,10 @@ class WeatherInfoUseCase {
     
     private func decodeWeatherInfo(
         at geoInfo: GeoInfo,
-        completionHandler: @escaping (WeatherRawData) -> Void
+        completionHandler: @escaping (WeatherData) -> Void
     ) {
-        self.weatherInfoRepository.loadWeatherData(by: geoInfo) { weatherRawData in
-            guard let decodedWeatherData = try? JSONDecoder().decode(WeatherRawData.self, from: weatherRawData) else {
+        self.weatherInfoRepository.loadWeatherData(by: geoInfo) { weatherData in
+            guard let decodedWeatherData = try? JSONDecoder().decode(WeatherData.self, from: weatherData) else {
                 print("WeatherInfo \(NetworkError.parsingError)")
                 return
             }
