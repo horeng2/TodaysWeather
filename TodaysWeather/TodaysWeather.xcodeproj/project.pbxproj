@@ -133,6 +133,7 @@
 				48AFD3682853C87700AF543F /* Main.storyboard */,
 				48AFD36A2853C87700AF543F /* AppDelegate.swift */,
 				48AFD37A2853C87700AF543F /* SceneDelegate.swift */,
+				48AFD3542853C87700AF543F /* APIKeyBundle.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -165,7 +166,6 @@
 			children = (
 				48AFD3792853C87700AF543F /* Info.plist */,
 				4886ECBD2858949C00E03EA5 /* Application */,
-				48AFD3542853C87700AF543F /* APIKeyBundle.swift */,
 				48AFD36B2853C87700AF543F /* Presentation */,
 				48AFD3712853C87700AF543F /* Domain */,
 				4886ECBC285893DA00E03EA5 /* Data */,
