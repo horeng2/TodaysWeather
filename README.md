@@ -56,7 +56,6 @@ OpenWeather API를 이용해서 날씨 정보를 불러옵니다.
 - 이미지캐싱 구현
 
 ### 구동 화면 
-### (녹화본 상으로는 아이콘이 뒤늦게 뜨는 것으로 보이는데, 실제 시뮬레이터와 기기에서 구동 시 딜레이 발생하지 않습니다!)
 
 ![Simulator Screen Recording - iPhone 13 - 2022-06-15 at 18 24 18](https://user-images.githubusercontent.com/87305744/174059820-120fa098-f498-48d5-8fb1-6a7caf5feed9.gif)
 
